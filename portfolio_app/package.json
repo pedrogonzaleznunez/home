@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "sync-cv": "node scripts/sync-cv.mjs",
+    "predev": "npm run sync-cv",
     "dev": "vite",
+    "prebuild": "npm run sync-cv",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },

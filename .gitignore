@@ -2,3 +2,9 @@ node_modules
 dist
 .DS_Store
 *.tsbuildinfo
+
+# copiados desde /CVs en cada build (ver portfolio_app/scripts/sync-cv.mjs)
+portfolio_app/public/cv/
+
+# archivos intermedios de LaTeX
+CVs/latex/build/

@@ -1,0 +1,87 @@
+\documentclass[10pt]{article}
+\usepackage[english]{babel}
+\usepackage{cv}
+\renewcommand{\techlabel}{Technologies}
+\hypersetup{pdftitle={CV - Pedro Gonzalez Nuñez}, pdfauthor={Pedro Gonzalez Nuñez}}
+
+\begin{document}
+
+\cvheader{photo.jpg}{Pedro Gonzalez Nuñez}
+  {September 7, 2002}{pedrogonzalezhudson@gmail.com}
+  {+54 9 11 5029 7907}{Buenos Aires, Argentina}
+  {www.linkedin.com/in/pedrogonzaleznunez/}{github.com/pedrogonzaleznunez}
+
+\vspace{4pt}
+\cvsection{About me}{%
+  Fourth-year Computer Engineering student with a solid background in software development,
+  automation, and artificial intelligence systems. I have experience in both academic research
+  projects and professional development environments, combining programming, mathematical
+  analysis, and teamwork. I am particularly interested in applying technology to solve complex
+  problems and optimize processes in real-world and multidisciplinary contexts.%
+}
+
+\sectionrule
+% ---------- EXPERIENCE: columna izquierda | \nextcolumn | columna derecha ----------
+\begin{experience}{Professional\\Experience}
+  \job{AI Developer}{Galo AI | March 2026 -- Present}
+    {Python, SQL, OpenAI/Anthropic APIs, RAG, Prompt Engineering, LLM Ops.}{
+    \item Design and deployment of production-ready AI agent workflows focused on operational automation, implementing strict validations, retries, and guardrails to ensure reliability.
+    \item Implementation of advanced RAG (Retrieval-Augmented Generation) systems and structured outputs utilizing tool/function calling and dynamic JSON schema generation.
+    \item Development of robust LLM evaluation pipelines and regression testing frameworks to minimize hallucinations and monitor prompt performance.
+  }
+  \job{Backend Developer -- AI Agents}{Push\&Pop | August 2025 -- December 2025}
+    {Python, FastAPI, Google ADK, PostgreSQL, WhatsApp API, Telegram API, Azure.}{
+    \item Development of artificial intelligence agents using Google ADK for automation and conversational assistance.
+    \item Implementation of REST services with FastAPI and data persistence using PostgreSQL.
+    \item Integration with messaging platforms (WhatsApp and Telegram) for multi-platform operation.
+    \item Deployment and configuration of services on Azure.
+  }
+\nextcolumn
+  \job{DevOps / Cloud Engineer}{Galo AI | June 2026 -- Present}
+    {Prometheus, Loki, Grafana, Metabase, Cloudflare, VPS, DNS, Cloud Storage.}{
+    \item Optimized cloud storage architecture by reorganizing bucket structures and implementing signed URLs to ensure secure, time-limited file access.
+    \item Led infrastructure migration from a monolithic single-server setup to a distributed three-server architecture, isolating monitoring services (Prometheus, Loki, Metabase) to eliminate Single Points of Failure (SPOF).
+    \item Safeguarded data integrity by establishing a strict deployment pipeline, rigorously testing all architectural changes in a dedicated staging environment prior to production rollouts.
+    \item Engineered custom Grafana dashboards to provide comprehensive, real-time observability into system performance and resource metrics.
+    \item Resolved complex networking challenges by securely interlinking internal services across VPS environments using Cloudflare Tunnels (Zero Trust) and managing advanced DNS configurations.
+  }
+  \job{Full Stack Developer}{CodifyCo | September 2025 -- March 2026}
+    {React, Next.js, NestJS, Prisma, PostgreSQL, Docker, Coolify, AWS.}{
+    \item Development and maintenance of a high-concurrency platform with a large number of active users.
+    \item Design and implementation of full stack features focused on scalability, performance, and quality.
+    \item Diagnosis and resolution of production incidents (hotfixes, refactors, and structural improvements).
+    \item Optimization of critical endpoints and operations, improving system response times.
+    \item Work within agile methodologies, participating in analysis, development, testing, deployment, and post-release support.
+  }
+\end{experience}
+
+\sectionrule
+\cvsection{Academic\\Projects \&\\Activities}{%
+  \edu{Buenos Aires Institute of Technology (ITBA)}{Computer Engineering | 2022 -- Present}
+  \edu{Applied Software Development Courses (Udemy)}{NestJS, Next.js, React, Docker | 2025 -- Present}
+  \edu{Technical Secondary School No.~7 ``T.R.Q.'' (IMPA)}{Aeronautical Technician | 2015 -- 2021}
+  \edu{Digital Business Course (Udemy)}{Sales and Customer Management | Oct 2023 -- Dec 2023}%
+}
+
+\sectionrule
+\cvsection{Interests \&\\Hobbies}{%
+  \inlinelist{Football Player}{Miniature Trains}{Applied Physics (Relativity \& Electromagnetism)}%
+}
+
+\sectionrule
+\cvsection{Technical\\Skills}{%
+  \textbf{Languages:} TypeScript, Python, JavaScript, Java, C, C\#, HTML, CSS\\
+  \textbf{Frontend \& Mobile:} React, Next.js, iOS Development, React Native\\
+  \textbf{Backend:} Node.js (Express, NestJS), FastAPI, Django, Java Spring Boot\\
+  \textbf{Databases:} PostgreSQL, MySQL, MongoDB, SQLite3, Prisma (ORM)\\
+  \textbf{Cloud, DevOps \& Tools:} AWS, Azure, Docker, Git, GitHub, Maven\\
+  \textbf{Testing \& QA:} Automated Testing (Unit, Integration, E2E), Jest, Cypress\\
+  \textbf{Hardware:} Arduino, ESP32, Raspberry Pi%
+}
+
+\sectionrule
+\cvsection{Languages}{%
+  \lang{English}{C1 (Advanced)}\lang{German}{B1 (Intermediate)}\lang{French}{A1 (Basic)}%
+}
+
+\end{document}

@@ -1,0 +1,114 @@
+% =========================================================
+%  Estilo del CV — compartido por cv_es.tex y cv_en.tex
+%  El contenido se edita en los .tex de cada idioma; acá solo va el diseño.
+% =========================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cv}
+
+\RequirePackage[a4paper, margin=1.1cm, top=0.7cm, bottom=0.5cm]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[default, lining]{raleway}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{fontawesome5}
+\RequirePackage{enumitem}
+\RequirePackage{array}
+\RequirePackage[hidelinks, pdfusetitle]{hyperref}
+
+\definecolor{ink}{HTML}{1E1E1E}
+\definecolor{soft}{HTML}{4A4A4A}
+\color{ink}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.0}
+\hyphenpenalty=10000 \exhyphenpenalty=10000 % sin cortes de palabras
+\newcommand{\bulletsym}{{\scriptsize\textbullet}}
+
+% ---------- Medidas ----------
+\newlength{\labelw}  \setlength{\labelw}{3.6cm}  % columna de títulos de sección
+\newlength{\gutter}  \setlength{\gutter}{0.5cm}
+\newlength{\bodyw}   \setlength{\bodyw}{\dimexpr\textwidth-\labelw-\gutter\relax}
+
+% ---------- Encabezado ----------
+% \cvheader{foto}{nombre}{fecha nac.}{email}{teléfono}{ubicación}{linkedin}{github}
+\newcommand{\cvheader}[8]{%
+  \begin{minipage}[t]{\labelw}
+    \vspace{0pt}\centering
+    \begin{tikzpicture}
+      \clip (0,0) circle (1.6cm);
+      \node at (0,-0.35) {\includegraphics[width=3.5cm]{#1}};
+    \end{tikzpicture}
+  \end{minipage}%
+  \hspace{\gutter}%
+  \begin{minipage}[t]{\bodyw}
+    \vspace{0pt}
+    {\fontsize{24}{28}\selectfont\bfseries\MakeUppercase{#2}}\par
+    \vspace{3pt}{\color{ink}\rule{\linewidth}{0.8pt}}\par\vspace{6pt}
+    \small
+    \begin{tabular}{@{}p{0.45cm}p{4.6cm}p{0.45cm}l@{}}
+      \faUser & #3 & \faEnvelope & \href{mailto:#4}{#4} \\[2pt]
+      \faPhone* & #5 & \faMapMarker* & #6 \\[2pt]
+      \faLink & \multicolumn{3}{l}{\href{https://#7}{#7}} \\[2pt]
+      \faGithub & \multicolumn{3}{l}{\href{https://#8}{#8}} \\
+    \end{tabular}
+  \end{minipage}\par
+}
+
+% ---------- Secciones ----------
+\newcommand{\sectionrule}{\par\vspace{4pt}{\color{ink}\rule{\linewidth}{0.6pt}}\par\vspace{4pt}}
+
+\newcommand{\cvlabel}[1]{%
+  {\raggedleft\bfseries\MakeUppercase{#1}\par}%
+}
+
+% \cvsection{TÍTULO}{contenido}: título a la izquierda, contenido a la derecha
+\newcommand{\cvsection}[2]{%
+  \begin{minipage}[t]{\labelw}\vspace{0pt}\cvlabel{#1}\end{minipage}%
+  \hspace{\gutter}%
+  \begin{minipage}[t]{\bodyw}\vspace{0pt}\small\raggedright #2\end{minipage}\par
+}
+
+% ---------- Experiencia (dos columnas) ----------
+\newlength{\colw} \setlength{\colw}{\dimexpr(\textwidth-0.6cm)/2\relax}
+
+% entorno: \begin{experience}{TÍTULO} ...col izq... \nextcolumn ...col der... \end{experience}
+\newenvironment{experience}[1]{%
+  \begin{minipage}[t]{\colw}\vspace{0pt}%
+    \begin{minipage}{\labelw}\cvlabel{#1}\end{minipage}\par\vspace{4pt}%
+}{%
+  \end{minipage}\par
+}
+\newcommand{\nextcolumn}{\end{minipage}\hspace{0.6cm}\begin{minipage}[t]{\colw}\vspace{0pt}}
+
+% \job{Puesto}{Empresa | fechas}{Tecnologías}{\item ... \item ...}
+\newcommand{\techlabel}{Technologies}
+\newcommand{\job}[4]{%
+  {\bfseries #1}\par
+  {\footnotesize\color{soft}(#2)}\par\vspace{1pt}
+  \begin{itemize}[leftmargin=1em, itemsep=0.6pt, parsep=0pt, topsep=1pt, label=\bulletsym]
+    \footnotesize\raggedright #4
+    \item \textbf{\techlabel:} #3
+  \end{itemize}
+  \vspace{4pt}
+}
+
+% ---------- Formación ----------
+% \edu{Institución}{Detalle | fechas}
+\newcommand{\edu}[2]{{\bfseries #1} {\color{soft}\textendash\ #2}\par\vspace{2pt}}
+
+% ---------- Lista en línea ----------
+% \inlinelist{a}{b}{c}
+\newcommand{\inlinelist}[3]{#1\quad\textbullet\quad #2\quad\textbullet\quad #3}
+
+% ---------- Lista simple ----------
+\newenvironment{simplelist}{%
+  \begin{itemize}[leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=0pt, label=\bulletsym]
+}{\end{itemize}}
+
+% ---------- Idiomas ----------
+% \lang{Idioma}{Nivel}
+\newcommand{\lang}[2]{\begin{minipage}[t]{0.32\linewidth}\textbf{#1:}\\#2\end{minipage}}
