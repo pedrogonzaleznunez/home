@@ -9,7 +9,7 @@ export const es = {
     contact: 'contacto',
   },
   hero: {
-    roles: ['AI Developer', 'DevOps / Cloud Engineer', 'Full Stack Developer', 'Ingeniería Informática @ ITBA'],
+    roles: ['Software Engineer', 'Forward Deployed Engineer', 'AI Software Engineer', 'Ingeniería Informática @ ITBA'],
     lead: 'Estudiante de Ingeniería Informática en el ITBA. Construyo agentes de IA en producción, infraestructura cloud resiliente y plataformas full stack.',
     talk: 'Hablemos',
     cv: 'Descargar CV',
@@ -19,47 +19,70 @@ export const es = {
     title: 'Sobre mí',
     p1: 'Estudiante de cuarto año de Ingeniería Informática con una base sólida en desarrollo de software, automatización y sistemas de inteligencia artificial. Tengo experiencia tanto en proyectos de investigación académica como en entornos de desarrollo profesional, combinando programación, análisis matemático y trabajo en equipo.',
     p2: 'Me interesa especialmente aplicar la tecnología para resolver problemas complejos y optimizar procesos en contextos reales y multidisciplinarios.',
-    stats: ['roles en la industria', 'años de ingeniería', 'idiomas extranjeros'],
+    stats: ['experiencias laborales', 'años de ingeniería', 'idiomas extranjeros'],
   },
   exp: {
     title: 'Experiencia',
-    present: 'presente',
-    devops: {
-      role: 'DevOps / Cloud Engineer',
-      date: 'ago 2026 — sep 2026',
-      bullets: [
-        'Lideré la migración de un servidor monolítico a una arquitectura distribuida de tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.',
-        'Optimicé el almacenamiento cloud reorganizando buckets e implementando signed URLs para acceso seguro y temporal.',
-        'Establecí un pipeline de despliegue estricto con un entorno de staging dedicado antes de cada rollout a producción.',
-        'Dashboards de Grafana a medida para observabilidad en tiempo real; servicios interconectados entre VPS con Cloudflare Tunnels (Zero Trust) y DNS avanzado.',
-      ],
-    },
-    ai: {
-      role: 'AI Developer',
-      date: 'abr 2026 — jul 2026',
-      bullets: [
-        'Diseño y despliegue de workflows de agentes de IA en producción para automatización operativa, con validaciones estrictas, reintentos y guardrails.',
-        'Sistemas RAG avanzados y structured outputs con tool/function calling y generación dinámica de JSON schemas.',
-        'Pipelines de evaluación de LLMs y regression testing para minimizar alucinaciones y monitorear la performance de los prompts.',
-      ],
-    },
-    fullstack: {
-      role: 'Full Stack Developer',
-      date: 'sep 2025 — feb 2026',
-      bullets: [
-        'Desarrollo y mantenimiento de una plataforma de alta concurrencia con gran cantidad de usuarios activos.',
-        'Features full stack enfocadas en escalabilidad, performance y calidad; optimización de endpoints críticos.',
-        'Diagnóstico y resolución de incidentes en producción (hotfixes, refactors y mejoras estructurales) con metodologías ágiles.',
-      ],
-    },
-    backend: {
-      role: 'Backend Developer — AI Agents',
-      date: 'mar 2025 — ago 2025',
-      bullets: [
-        'Agentes de IA con Google ADK para automatización y asistencia conversacional.',
-        'Servicios REST con FastAPI y persistencia en PostgreSQL; despliegue y configuración en Azure.',
-        'Integración con WhatsApp y Telegram para operación multiplataforma.',
-      ],
+    jobs: {
+      galoSwe: {
+        role: 'Software Engineer',
+        type: 'Medio tiempo',
+        date: 'ago 2026 — sep 2026',
+        bullets: [
+          'Lideré la migración de un servidor monolítico a una arquitectura distribuida de tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.',
+          'Optimicé el almacenamiento cloud reorganizando buckets e implementando signed URLs para acceso seguro y temporal.',
+          'Establecí un pipeline de despliegue estricto con un entorno de staging dedicado antes de cada rollout a producción.',
+          'Dashboards de Grafana a medida para observabilidad en tiempo real; servicios interconectados entre VPS con Cloudflare Tunnels (Zero Trust) y DNS avanzado.',
+        ],
+      },
+      galoFde: {
+        role: 'Forward Deployed Engineer',
+        type: 'Tiempo completo',
+        date: 'abr 2026 — jul 2026',
+        bullets: [
+          'Diseño y despliegue de workflows de agentes de IA en producción para automatización operativa, con validaciones estrictas, reintentos y guardrails.',
+          'Sistemas RAG avanzados y structured outputs con tool/function calling y generación dinámica de JSON schemas.',
+          'Pipelines de evaluación de LLMs y regression testing para minimizar alucinaciones y monitorear la performance de los prompts.',
+        ],
+      },
+      codify: {
+        role: 'Software Engineer',
+        type: 'Medio tiempo',
+        date: 'sep 2025 — feb 2026',
+        bullets: [
+          'Desarrollo y mantenimiento de una plataforma de alta concurrencia con gran cantidad de usuarios activos.',
+          'Features full stack enfocadas en escalabilidad, performance y calidad; optimización de endpoints críticos.',
+          'Diagnóstico y resolución de incidentes en producción (hotfixes, refactors y mejoras estructurales) con metodologías ágiles.',
+        ],
+      },
+      rocketry: {
+        role: 'Full-stack Developer',
+        type: 'Contrato',
+        date: 'ago 2025 — sep 2025',
+        bullets: [
+          'Pasante full-stack dando soporte a herramientas internas y aplicaciones web del equipo.',
+          'Desarrollo frontend con Next.js y React, incluida la landing page del equipo.',
+        ],
+      },
+      research: {
+        role: 'Research Assistant',
+        type: 'Medio tiempo',
+        date: 'oct 2024 — sep 2025',
+        bullets: [
+          'Desarrollo de un robot integrando diferentes tecnologías de electrónica y control.',
+          'Implementación de la parte electrónica del sistema, incluyendo batería, motores y el sistema de control.',
+        ],
+      },
+      pushpop: {
+        role: 'AI Software Engineer',
+        type: 'Freelance',
+        date: 'mar 2025 — ago 2025',
+        bullets: [
+          'Agentes de IA con Google ADK para automatización y asistencia conversacional.',
+          'Servicios REST con FastAPI y persistencia en PostgreSQL; despliegue y configuración en Azure.',
+          'Integración con WhatsApp y Telegram para operación multiplataforma.',
+        ],
+      },
     },
   },
   skills: {

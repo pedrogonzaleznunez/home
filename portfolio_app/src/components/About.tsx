@@ -16,7 +16,7 @@ function Counter({ to }: { to: number }) {
   return <span ref={ref}>0</span>
 }
 
-const STATS = [4, 4, 3]
+const STATS = [6, 4, 3]
 
 export function About() {
   const { t } = useLang()

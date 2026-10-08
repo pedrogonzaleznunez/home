@@ -5,7 +5,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{cv}
 
-\RequirePackage[a4paper, margin=1.1cm, top=0.7cm, bottom=0.5cm]{geometry}
+\RequirePackage[a4paper, margin=0.9cm, top=0.7cm, bottom=0.5cm]{geometry}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[default, lining]{raleway}
@@ -39,14 +39,14 @@
   \begin{minipage}[t]{\labelw}
     \vspace{0pt}\centering
     \begin{tikzpicture}
-      \clip (0,0) circle (1.6cm);
-      \node at (0,-0.35) {\includegraphics[width=3.5cm]{#1}};
+      \clip (0,0) circle (1.45cm);
+      \node at (0,-0.3) {\includegraphics[width=3.2cm]{#1}};
     \end{tikzpicture}
   \end{minipage}%
   \hspace{\gutter}%
   \begin{minipage}[t]{\bodyw}
     \vspace{0pt}
-    {\fontsize{24}{28}\selectfont\bfseries\MakeUppercase{#2}}\par
+    {\fontsize{22}{26}\selectfont\bfseries\MakeUppercase{#2}}\par
     \vspace{3pt}{\color{ink}\rule{\linewidth}{0.8pt}}\par\vspace{6pt}
     \small
     \begin{tabular}{@{}p{0.45cm}p{4.6cm}p{0.45cm}l@{}}
@@ -59,7 +59,7 @@
 }
 
 % ---------- Secciones ----------
-\newcommand{\sectionrule}{\par\vspace{4pt}{\color{ink}\rule{\linewidth}{0.6pt}}\par\vspace{4pt}}
+\newcommand{\sectionrule}{\par\vspace{3pt}{\color{ink}\rule{\linewidth}{0.6pt}}\par\vspace{3pt}}
 
 \newcommand{\cvlabel}[1]{%
   {\raggedleft\bfseries\MakeUppercase{#1}\par}%
@@ -76,7 +76,7 @@
 \newlength{\colw} \setlength{\colw}{\dimexpr(\textwidth-0.6cm)/2\relax}
 
 % \explabel{TÍTULO} y luego una \jobrow por cada par de trabajos (quedan alineados arriba)
-\newcommand{\explabel}[1]{\begin{minipage}{\labelw}\cvlabel{#1}\end{minipage}\par\vspace{4pt}}
+\newcommand{\explabel}[1]{{\bfseries\MakeUppercase{#1}\par}\vspace{3pt}}
 % \jobrow{\job...}{\job...}
 \newcommand{\jobrow}[2]{%
   \begin{minipage}[t]{\colw}\vspace{0pt}#1\end{minipage}\hspace{0.6cm}%
@@ -88,7 +88,7 @@
   {\bfseries #1}\par
   {\footnotesize\color{soft}(#2)}\par\vspace{1pt}
   \begin{itemize}[leftmargin=1em, itemsep=0.6pt, parsep=0pt, topsep=1pt, label=\bulletsym]
-    \footnotesize\raggedright #4
+    \footnotesize\linespread{0.95}\selectfont\raggedright #4
     \item \textbf{\techlabel:} #3
   \end{itemize}
   \vspace{4pt}
@@ -108,5 +108,5 @@
 }{\end{itemize}}
 
 % ---------- Idiomas ----------
-% \lang{Idioma}{Nivel}
-\newcommand{\lang}[2]{\begin{minipage}[t]{0.32\linewidth}\textbf{#1:}\\#2\end{minipage}}
+% \lang{Idioma}{Nivel}: van en una sola línea, separados por \quad
+\newcommand{\lang}[2]{\textbf{#1:} #2\qquad}

@@ -47,7 +47,7 @@ export function Experience() {
           className="relative grid gap-5 border-l-2 border-accent/40 pl-6 lg:flex lg:gap-6 lg:overflow-visible lg:border-l-0 lg:pl-0"
         >
           {jobs.map((job) => {
-            const text = t.exp[job.id as 'devops' | 'ai' | 'fullstack' | 'backend']
+            const text = t.exp.jobs[job.id]
             return (
               <li key={job.id} className="relative lg:w-[min(560px,80vw)] lg:shrink-0">
                 <span
@@ -57,7 +57,7 @@ export function Experience() {
                 <SpotlightCard className="h-full">
                   <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                     <h3 className="text-xl font-bold">{text.role}</h3>
-                    <span className="font-mono text-xs text-muted">{job.company} · {text.date}</span>
+                    <span className="font-mono text-xs text-muted">{job.company} · {text.type} · {text.date}</span>
                   </div>
                   <ul className="list-disc space-y-1.5 pl-4 text-body marker:text-accent">
                     {text.bullets.map((b) => <li key={b}>{b}</li>)}

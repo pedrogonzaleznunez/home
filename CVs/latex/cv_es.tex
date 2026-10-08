@@ -21,41 +21,47 @@
 }
 
 \sectionrule
-% ---------- EXPERIENCE: cada \jobrow es una fila con dos trabajos alineados ----------
-\explabel{Experiencia\\Laboral}
+% ---------- EXPERIENCE: mismo orden que LinkedIn; cada \jobrow = fila de dos trabajos alineados ----------
+\explabel{Experiencia Laboral}
 \jobrow{%
-  \job{DevOps / Cloud Engineer}{Galo AI | Agosto 2026 -- Septiembre 2026}
+  \job{Software Engineer}{Galo AI | Medio tiempo | Agosto 2026 -- Septiembre 2026}
       {Prometheus, Loki, Grafana, Metabase, Cloudflare, VPS, DNS, Cloud Storage.}{
-      \item Optimización de la arquitectura de almacenamiento cloud, reorganizando buckets e implementando signed URLs para un acceso seguro y temporal a los archivos.
-      \item Lideré la migración de un servidor monolítico a una arquitectura distribuida de tres servidores, aislando los servicios de monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla (SPOF).
-      \item Implementación de un pipeline de despliegue estricto, validando todos los cambios de arquitectura en un entorno de staging dedicado antes de pasar a producción.
-      \item Dashboards de Grafana a medida para observabilidad en tiempo real de la performance del sistema y el uso de recursos.
-      \item Interconexión segura de servicios internos entre VPS mediante Cloudflare Tunnels (Zero Trust) y configuración avanzada de DNS.
+      \item Migré la infraestructura de un único servidor a una arquitectura distribuida de tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.
+      \item Armé un pipeline de despliegue con staging previo y dashboards de Grafana para observabilidad en tiempo real.
+      \item Aseguré el almacenamiento cloud con signed URLs e interconecté servicios entre VPS con Cloudflare Tunnels (Zero Trust).
     }%
 }{%
-  \job{AI Developer}{Galo AI | Abril 2026 -- Julio 2026}
+  \job{Forward Deployed Engineer}{Galo AI | Tiempo completo | Abril 2026 -- Julio 2026}
       {Python, SQL, OpenAI/Anthropic APIs, RAG, Prompt Engineering, LLM Ops.}{
-      \item Diseño y despliegue de workflows de agentes de IA en producción orientados a la automatización operativa, con validaciones estrictas, reintentos y guardrails para garantizar confiabilidad.
-      \item Implementación de sistemas RAG (Retrieval-Augmented Generation) avanzados y structured outputs mediante tool/function calling y generación dinámica de JSON schemas.
-      \item Desarrollo de pipelines de evaluación de LLMs y frameworks de regression testing para minimizar alucinaciones y monitorear la performance de los prompts.
+      \item Desarrollé y desplegué workflows de agentes de IA en producción con validaciones, reintentos y guardrails.
+      \item Implementé sistemas RAG y structured outputs con tool calling y JSON schemas dinámicos.
+      \item Armé pipelines de evaluación y regresión de LLMs para reducir alucinaciones.
     }%
 }
 \jobrow{%
-  \job{Full Stack Developer}{CodifyCo | Septiembre 2025 -- Febrero 2026}
+  \job{Software Engineer}{Codify Company | Medio tiempo | Septiembre 2025 -- Febrero 2026}
       {React, Next.js, NestJS, Prisma, PostgreSQL, Docker, Coolify, AWS.}{
-      \item Desarrollo y mantenimiento de una plataforma de alta concurrencia con gran cantidad de usuarios activos.
-      \item Diseño e implementación de funcionalidades full stack orientadas a escalabilidad, performance y calidad.
-      \item Diagnóstico y resolución de incidentes en producción (hotfixes, refactors y mejoras estructurales).
-      \item Optimización de endpoints y operaciones críticas, mejorando los tiempos de respuesta del sistema.
-      \item Trabajo con metodologías ágiles: análisis, desarrollo, testing, deploy y soporte post-release.
+      \item Desarrollé features full stack para una plataforma de alta concurrencia con muchos usuarios activos.
+      \item Resolví incidentes en producción y optimicé endpoints críticos, mejorando los tiempos de respuesta.
     }%
 }{%
-  \job{Backend Developer -- Agentes de IA}{Push\&Pop | Marzo 2025 -- Agosto 2025}
+  \job{Full-stack Developer}{ITBA Rocketry Team | Contrato | Agosto 2025 -- Septiembre 2025}
+      {Next.js, React.}{
+      \item Desarrollé herramientas internas y aplicaciones web para el equipo, con foco en frontend.
+      \item Desarrollé la landing page del equipo.
+    }%
+}
+\jobrow{%
+  \job{Research Assistant}{ITBA | Medio tiempo | Octubre 2024 -- Septiembre 2025}
+      {Python, Signal Processing.}{
+      \item Desarrollé un robot integrando electrónica y sistemas de control.
+      \item Implementé su parte electrónica: batería, motores y sistema de control.
+    }%
+}{%
+  \job{AI Software Engineer}{Push\&Pop Growth | Freelance | Marzo 2025 -- Agosto 2025}
       {Python, FastAPI, Google ADK, PostgreSQL, WhatsApp API, Telegram API, Azure.}{
-      \item Construcción de agentes de IA con Google ADK para automatización y asistencia conversacional.
-      \item Desarrollo de servicios REST con FastAPI y persistencia en PostgreSQL.
-      \item Integración con canales de mensajería (WhatsApp y Telegram) para operación multiplataforma.
-      \item Despliegue y configuración de servicios en Azure.
+      \item Desarrollé agentes de IA con Google ADK, integrados con WhatsApp y Telegram.
+      \item Desarrollé servicios REST con FastAPI y PostgreSQL, desplegados en Azure.
     }%
 }
 
@@ -85,7 +91,7 @@
 
 \sectionrule
 \cvsection{Idiomas}{%
-  \lang{Inglés}{C1 (Avanzado)}\lang{Alemán}{B1 (Intermedio)}\lang{Francés}{A1 (Básico)}%
+  \lang{Español}{C2 (Nativo)}\lang{Inglés}{C1 (Avanzado)}\lang{Alemán}{B1 (Intermedio)}\lang{Francés}{A1 (Básico)}%
 }
 
 \end{document}

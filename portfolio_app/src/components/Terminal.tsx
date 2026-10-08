@@ -50,7 +50,7 @@ export function Terminal() {
         return [out(<><span className="text-accent">{profile.name}</span> — {t.hero.roles.slice(0, 2).join(' · ')}{'\n'}{t.about.p1}</>)]
       case 'experience':
         return jobs.map((j) => {
-          const e = t.exp[j.id as 'devops' | 'ai' | 'fullstack' | 'backend']
+          const e = t.exp.jobs[j.id]
           return out(<><span className="text-accent">▸ {e.role}</span> <span className="text-muted">@ {j.company} ({e.date})</span>{'\n'}  {j.tags.join(', ')}</>)
         })
       case 'skills':
