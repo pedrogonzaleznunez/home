@@ -10,4 +10,4 @@ portfolio_app/public/cv/
 CVs/latex/build/
 
 # notas locales (no se versionan)
-docs/
+.docs/
