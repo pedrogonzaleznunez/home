@@ -87,7 +87,7 @@ export function Hero() {
           {role}
           <span className="ml-0.5 animate-blink text-accent">▋</span>
         </p>
-        <motion.p {...rise(0.35)} className="mx-auto max-w-xl text-lg text-muted [text-shadow:0_1px_12px_#07090d]">
+        <motion.p {...rise(0.35)} className="mx-auto max-w-xl text-lg text-white [text-shadow:0_1px_12px_#07090d,0_0_4px_#07090d]">
           {t.hero.lead}
         </motion.p>
         <motion.div {...rise(0.5)} className="mt-9 flex flex-wrap justify-center gap-3">
