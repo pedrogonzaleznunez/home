@@ -8,3 +8,6 @@ portfolio_app/public/cv/
 
 # archivos intermedios de LaTeX
 CVs/latex/build/
+
+# notas locales (no se versionan)
+docs/
