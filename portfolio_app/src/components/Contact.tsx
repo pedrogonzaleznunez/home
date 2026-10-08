@@ -29,7 +29,7 @@ export function Contact({ index }: { index: number }) {
               <span className="text-accent">{t.contact.cta}</span>
             </p>
             <div className="mb-5 flex flex-wrap justify-center gap-3">
-              <Button primary href={`mailto:${profile.email}`}>{profile.email}</Button>
+              <Button primary href={`mailto:${profile.email}`} className="px-3.5 text-[11px] min-[360px]:px-5 min-[360px]:text-sm">{profile.email}</Button>
               <button
                 type="button"
                 onClick={copy}
