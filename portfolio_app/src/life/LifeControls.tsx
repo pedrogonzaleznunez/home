@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { useLang } from '../i18n/LangContext'
 import { AUTOMATA, RULE_IDS, type RuleId } from './automata'
 import { lifeStore, useLife } from './store'
@@ -8,23 +9,82 @@ const btn =
 
 const swatch = (p: Palette) => `linear-gradient(135deg, ${rgb(p.young)}, ${rgb(p.old)})`
 
+// Botón "color" que abre un panel con las paletas encima de la barra
+function ColorPicker() {
+  const { t } = useLang()
+  const { palette } = useLife()
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    const onDown = (e: PointerEvent) => {
+      if (!ref.current!.contains(e.target as Node)) setOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('pointerdown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('pointerdown', onDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-label={`${t.life.color}: ${PALETTES[palette].name}`}
+        onClick={() => setOpen((o) => !o)}
+        className={`${btn} flex items-center gap-2 px-2 text-fg sm:px-3 ${open ? 'border-accent text-accent' : ''}`}
+      >
+        <span aria-hidden="true" className="size-3.5 rounded-full" style={{ background: swatch(PALETTES[palette]) }} />
+        <span className="hidden sm:inline">{t.life.color}</span>
+      </button>
+      {open && (
+        <div
+          role="radiogroup"
+          aria-label={t.life.color}
+          className="absolute bottom-full left-1/2 mb-3 flex -translate-x-1/2 gap-2.5 rounded-full border border-line bg-panel/95 p-2.5 backdrop-blur-md"
+        >
+          {PALETTE_IDS.map((id) => {
+            const p = PALETTES[id]
+            const active = id === palette
+            return (
+              <button
+                key={id}
+                type="button"
+                role="radio"
+                aria-checked={active}
+                aria-label={p.name}
+                title={p.name}
+                onClick={() => lifeStore.setPalette(id)}
+                style={{ background: swatch(p) }}
+                className={`size-7 cursor-pointer rounded-full transition-transform hover:scale-110 sm:size-6 ${
+                  active ? 'ring-2 ring-fg/80 ring-offset-2 ring-offset-panel' : 'opacity-70 hover:opacity-100'
+                }`}
+              />
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export function LifeControls() {
   const { t } = useLang()
-  const { rule, palette, running, gen } = useLife()
-  const current = PALETTES[palette]
-  const nextPalette = () =>
-    lifeStore.setPalette(PALETTE_IDS[(PALETTE_IDS.indexOf(palette) + 1) % PALETTE_IDS.length])
+  const { rule, running } = useLife()
 
   return (
     <div
       role="group"
       aria-label={t.life.label}
       data-no-life
-      className="fixed inset-x-4 bottom-4 z-50 flex items-center justify-between gap-1.5 rounded-full border border-line bg-panel/85 p-1.5 font-mono text-xs text-muted backdrop-blur-md sm:left-auto sm:justify-start sm:pl-4"
+      className="fixed inset-x-4 bottom-4 z-50 flex items-center justify-between gap-1.5 rounded-full border border-line bg-panel/85 p-1.5 font-mono text-xs text-muted backdrop-blur-md sm:left-auto sm:justify-start"
     >
-      <span className="hidden sm:inline">
-        {t.life.gen} <b className="inline-block min-w-[5ch] font-semibold text-accent">{gen}</b>
-      </span>
       <select
         aria-label={t.life.rule}
         value={rule}
@@ -37,35 +97,7 @@ export function LifeControls() {
           </option>
         ))}
       </select>
-      {/* Mobile: un solo círculo que rota entre paletas para que la barra entre en una fila */}
-      <button
-        type="button"
-        aria-label={`${t.life.color}: ${current.name}`}
-        onClick={nextPalette}
-        style={{ background: swatch(current) }}
-        className="size-7 shrink-0 cursor-pointer rounded-full ring-2 ring-fg/80 ring-offset-2 ring-offset-panel sm:hidden"
-      />
-      <div role="radiogroup" aria-label={t.life.color} className="hidden items-center gap-1 px-1 sm:flex">
-        {PALETTE_IDS.map((id) => {
-          const p = PALETTES[id]
-          const active = id === palette
-          return (
-            <button
-              key={id}
-              type="button"
-              role="radio"
-              aria-checked={active}
-              aria-label={p.name}
-              title={p.name}
-              onClick={() => lifeStore.setPalette(id)}
-              style={{ background: swatch(p) }}
-              className={`size-4 cursor-pointer rounded-full transition-transform hover:scale-110 ${
-                active ? 'ring-2 ring-fg/80 ring-offset-2 ring-offset-panel' : 'opacity-60 hover:opacity-100'
-              }`}
-            />
-          )
-        })}
-      </div>
+      <ColorPicker />
       <button type="button" className={`${btn} text-fg`} onClick={lifeStore.toggle}>
         {running ? t.life.pause : t.life.play}
       </button>

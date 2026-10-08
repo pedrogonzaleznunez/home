@@ -21,7 +21,7 @@ export function Nav() {
       <div className="flex items-center gap-6">
         <div className="hidden gap-6 font-mono text-sm lg:flex">
           {links.map(([id, label]) => (
-            <a key={id} href={`#${id}`} className="text-muted transition-colors hover:text-accent">
+            <a key={id} href={`#${id}`} className="text-muted transition-colors first-letter:uppercase hover:text-accent">
               {label}
             </a>
           ))}

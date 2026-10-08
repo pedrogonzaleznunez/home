@@ -3,6 +3,7 @@ import { useLang } from '../i18n/LangContext'
 import { Section } from './ui/Section'
 import { SpotlightCard } from './ui/SpotlightCard'
 import { Reveal } from './ui/Reveal'
+import { Flag } from './ui/Flag'
 
 export function Education({ index }: { index: number }) {
   const { t } = useLang()
@@ -25,8 +26,11 @@ export function Education({ index }: { index: number }) {
           <SpotlightCard className="h-full">
             <h3 className="mb-2 font-mono text-sm text-accent">// {t.edu.languagesTitle}</h3>
             {t.edu.languages.map((l, i) => (
-              <div key={l.name} className="my-3 grid grid-cols-[72px_1fr_56px] items-center gap-3">
-                <span>{l.name}</span>
+              <div key={l.name} className="my-3 grid grid-cols-[104px_1fr_56px] items-center gap-3">
+                <span className="flex items-center gap-2">
+                  <Flag code={l.flag} className="h-3.5 w-[21px]" />
+                  {l.name}
+                </span>
                 <span className="h-1.5 overflow-hidden rounded-full bg-white/6">
                   <motion.i
                     className="block h-full rounded-full bg-linear-to-r from-accent to-accent-2"

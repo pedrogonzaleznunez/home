@@ -30,7 +30,6 @@ export function LifeCanvas() {
     let world: World
     let automaton = AUTOMATA[lifeStore.get().rule]
     let colors = buildColors(PALETTES[lifeStore.get().palette])
-    let gen = 0
     let lastStep = 0
     let lastInject = 0
     let raf = 0
@@ -91,8 +90,6 @@ export function LifeCanvas() {
         let pop = 0
         for (let k = 0; k < automaton.stepsPerTick; k++) pop = automaton.step(world)
         lastStep = now
-        gen++
-        lifeStore.setGen(gen)
         // mantener el tablero vivo
         const low = automaton.lowPopulation(world, pop)
         if (now - lastInject > (low ? 600 : 3500)) {
@@ -128,8 +125,6 @@ export function LifeCanvas() {
     const offCommand = lifeStore.onCommand((c) => {
       if (c === 'seed') automaton.seed(world)
       else { world.cells.fill(0); world.age.fill(0); world.trail.fill(0); world.ants = [] }
-      gen = 0
-      lifeStore.setGen(0)
     })
 
     let currentRule = lifeStore.get().rule
@@ -144,7 +139,6 @@ export function LifeCanvas() {
       currentRule = rule
       automaton = AUTOMATA[rule]
       automaton.seed(world)
-      gen = 0
     })
 
     resize()

@@ -1,3 +1,4 @@
+import type { FlagCode } from '../components/ui/Flag'
 export const es = {
   nav: {
     about: 'sobre mí',
@@ -13,7 +14,7 @@ export const es = {
     lead: 'Estudiante de Ingeniería Informática en el ITBA. Construyo agentes de IA en producción, infraestructura cloud resiliente y plataformas full stack.',
     talk: 'Hablemos',
     cv: 'Descargar CV',
-    hint: 'mové el mouse para dar vida a las células · click para lanzar un glider',
+    hint: '',
   },
   about: {
     title: 'Sobre mí',
@@ -135,10 +136,10 @@ export const es = {
     ],
     languagesTitle: 'idiomas',
     languages: [
-      { name: 'Español', level: 'nativo', pct: 100 },
-      { name: 'Inglés', level: 'C1', pct: 85 },
-      { name: 'Alemán', level: 'B1', pct: 55 },
-      { name: 'Francés', level: 'A1', pct: 20 },
+      { name: 'Español', flag: 'ar' as FlagCode, level: 'nativo', pct: 100 },
+      { name: 'Inglés', flag: 'us' as FlagCode, level: 'C1', pct: 85 },
+      { name: 'Alemán', flag: 'de' as FlagCode, level: 'B1', pct: 55 },
+      { name: 'Francés', flag: 'fr' as FlagCode, level: 'A1', pct: 20 },
     ],
     hobbiesTitle: 'fuera del código',
     hobbies: ['⚽ Fútbol', '🚂 Trenes en miniatura', '⚛️ Física aplicada — relatividad y electromagnetismo'],

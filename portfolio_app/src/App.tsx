@@ -10,7 +10,8 @@ import { About } from './components/About'
 import { Experience } from './components/Experience'
 import { Skills } from './components/Skills'
 import { Terminal } from './components/Terminal'
-import { GithubActivity } from './components/GithubActivity'
+// Oculto por ahora: descomentar para volver a mostrar la actividad de GitHub
+// import { GithubActivity } from './components/GithubActivity'
 import { Projects } from './components/Projects'
 import { Education } from './components/Education'
 import { Contact } from './components/Contact'
@@ -32,7 +33,7 @@ export default function App() {
         <Experience />
         <Skills />
         <Terminal />
-        <GithubActivity />
+        {/* <GithubActivity /> */}
         <Projects index={5} />
         <Education index={5 + offset} />
         <Contact index={6 + offset} />

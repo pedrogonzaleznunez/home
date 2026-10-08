@@ -3,7 +3,7 @@ import { RULE_IDS, type RuleId } from './automata'
 import { PALETTE_IDS, type PaletteId } from './palettes'
 
 // Estado compartido entre el canvas, los controles y la terminal.
-type State = { rule: RuleId; palette: PaletteId; running: boolean; gen: number }
+type State = { rule: RuleId; palette: PaletteId; running: boolean }
 type Command = 'seed' | 'clear'
 
 const RULE_KEY = 'life-rule'
@@ -27,7 +27,7 @@ function savedPalette(): PaletteId {
   return 'mint'
 }
 
-let state: State = { rule: savedRule(), palette: savedPalette(), running: !reduceMotion, gen: 0 }
+let state: State = { rule: savedRule(), palette: savedPalette(), running: !reduceMotion }
 const listeners = new Set<() => void>()
 const commandListeners = new Set<(c: Command) => void>()
 
@@ -44,14 +44,13 @@ export const lifeStore = {
   },
   setRule(rule: RuleId) {
     try { localStorage.setItem(RULE_KEY, rule) } catch { /* noop */ }
-    set({ rule, gen: 0 })
+    set({ rule })
   },
   setPalette(palette: PaletteId) {
     try { localStorage.setItem(PALETTE_KEY, palette) } catch { /* noop */ }
     set({ palette })
   },
   toggle: () => set({ running: !state.running }),
-  setGen: (gen: number) => set({ gen }),
   command: (c: Command) => commandListeners.forEach((l) => l(c)),
   onCommand(l: (c: Command) => void) {
     commandListeners.add(l)
