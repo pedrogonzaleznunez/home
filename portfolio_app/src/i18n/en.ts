@@ -15,7 +15,7 @@ export const en: Dict = {
     lead: 'Computer Engineering student at ITBA. I build production AI agents, resilient cloud infrastructure and full stack platforms.',
     talk: "Let's talk",
     cv: 'Download CV',
-    hint: 'move the mouse to bring cells to life · click to launch a glider',
+    hint: '',
   },
   about: {
     title: 'About me',
