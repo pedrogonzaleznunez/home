@@ -39,7 +39,7 @@ export default function App() {
         <Contact index={6 + offset} />
       </main>
       <footer className="relative z-[2] px-4 pt-7 pb-24 text-center font-mono text-xs text-muted sm:px-12">
-        © {new Date().getFullYear()} {profile.name} · built with React + a few cellular automata
+        © {new Date().getFullYear()} - Made by {profile.name}
       </footer>
       <LifeControls />
     </LangProvider>

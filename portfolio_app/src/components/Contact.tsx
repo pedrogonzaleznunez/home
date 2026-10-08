@@ -7,18 +7,44 @@ import { Button } from './ui/Button'
 import { ShineBorder } from './ui/ShineBorder'
 import { BrandIcon } from './ui/BrandIcon'
 
-export function Contact({ index }: { index: number }) {
-  const { t, lang } = useLang()
+const pill =
+  'grid cursor-pointer place-items-center rounded-full border px-3.5 py-3 font-mono text-[11px] transition hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgb(92_242_176/0.2)] min-[360px]:px-5 min-[360px]:text-sm'
+
+// Botón que copia `value` al portapapeles y muestra "¡copiado!" sin cambiar de ancho
+function CopyButton({ value, label, primary }: { value: string; label: string; primary?: boolean }) {
+  const { t } = useLang()
   const [copied, setCopied] = useState(false)
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(profile.email)
+      await navigator.clipboard.writeText(value)
       setCopied(true)
       setTimeout(() => setCopied(false), 1600)
     } catch { /* sin permiso de clipboard */ }
   }
 
+  return (
+    <button
+      type="button"
+      onClick={copy}
+      title={t.contact.copyHint}
+      aria-label={`${value} — ${t.contact.copyHint}`}
+      className={`${pill} ${
+        primary
+          ? 'border-accent bg-accent font-semibold text-bg hover:bg-[#7dffc6]'
+          : 'border-line bg-white/4 backdrop-blur-md hover:border-accent'
+      }`}
+    >
+      <span className={`col-start-1 row-start-1 transition-opacity ${copied ? 'opacity-0' : ''}`}>{label}</span>
+      <span aria-live="polite" className={`col-start-1 row-start-1 transition-opacity ${copied ? '' : 'opacity-0'}`}>
+        {copied ? `✓ ${t.contact.copied}` : ''}
+      </span>
+    </button>
+  )
+}
+
+export function Contact({ index }: { index: number }) {
+  const { t, lang } = useLang()
   return (
     <Section id="contact" index={index} title={t.contact.title}>
       <Reveal>
@@ -29,21 +55,10 @@ export function Contact({ index }: { index: number }) {
               <br />
               <span className="text-accent">{t.contact.cta}</span>
             </p>
-            {/* Fila 1: datos de contacto (el mail se copia al hacer click) */}
+            {/* Fila 1: datos de contacto (mail y teléfono se copian al hacer click) */}
             <div className="mb-3 flex flex-wrap justify-center gap-3">
-              <button
-                type="button"
-                onClick={copy}
-                title={t.contact.copyHint}
-                aria-label={`${profile.email} — ${t.contact.copyHint}`}
-                className="grid cursor-pointer place-items-center rounded-full border border-accent bg-accent px-3.5 py-3 font-mono text-[11px] font-semibold text-bg transition hover:-translate-y-0.5 hover:bg-[#7dffc6] hover:shadow-[0_8px_30px_rgb(92_242_176/0.2)] min-[360px]:px-5 min-[360px]:text-sm"
-              >
-                <span className={`col-start-1 row-start-1 transition-opacity ${copied ? 'opacity-0' : ''}`}>📨 {profile.email}</span>
-                <span aria-live="polite" className={`col-start-1 row-start-1 transition-opacity ${copied ? '' : 'opacity-0'}`}>
-                  {copied ? `✓ ${t.contact.copied}` : ''}
-                </span>
-              </button>
-              <Button href={profile.phoneHref}>☎️ {profile.phone}</Button>
+              <CopyButton primary value={profile.email} label={`📨 ${profile.email}`} />
+              <CopyButton value={profile.phone} label={`☎️ ${profile.phone}`} />
             </div>
             {/* Fila 2: enlaces */}
             <div className="mb-6 flex flex-wrap justify-center gap-3">
