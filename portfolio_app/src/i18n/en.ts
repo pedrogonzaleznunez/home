@@ -150,6 +150,7 @@ export const en: Dict = {
     big: 'Got a project or an offer?',
     cta: 'Get in touch.',
     copied: 'copied!',
+    copyHint: 'click to copy',
   },
   life: {
     label: 'Automaton controls',

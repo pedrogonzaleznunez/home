@@ -7,9 +7,9 @@ export function Nav() {
     ['about', t.nav.about],
     ['experience', t.nav.experience],
     ['skills', t.nav.skills],
-    ['terminal', t.nav.terminal],
     ...(projects.length ? [['projects', t.nav.projects]] : []),
     ['education', t.nav.education],
+    ['terminal', t.nav.terminal],
     ['contact', t.nav.contact],
   ]
 

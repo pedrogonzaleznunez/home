@@ -15,7 +15,7 @@ const PROMPT = 'guest@pgn:~$'
 
 let lineId = 0
 
-export function Terminal() {
+export function Terminal({ index }: { index: number }) {
   const { t, lang, setLang } = useLang()
   const [lines, setLines] = useState<Line[]>([])
   const [value, setValue] = useState('')
@@ -125,7 +125,7 @@ export function Terminal() {
   }
 
   return (
-    <Section id="terminal" index={4} title={t.terminal.title}>
+    <Section id="terminal" index={index} title={t.terminal.title}>
       <Reveal>
         <div
           className="card overflow-hidden rounded-2xl border border-line bg-[#05070a]/90 font-mono text-sm shadow-[0_30px_80px_rgb(0_0_0/0.5)] backdrop-blur-xl"

@@ -32,10 +32,10 @@ export default function App() {
         <About />
         <Experience />
         <Skills />
-        <Terminal />
         {/* <GithubActivity /> */}
-        <Projects index={5} />
-        <Education index={5 + offset} />
+        <Projects index={4} />
+        <Education index={4 + offset} />
+        <Terminal index={5 + offset} />
         <Contact index={6 + offset} />
       </main>
       <footer className="relative z-[2] px-4 pt-7 pb-24 text-center font-mono text-xs text-muted sm:px-12">

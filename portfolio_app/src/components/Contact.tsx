@@ -5,6 +5,7 @@ import { Section } from './ui/Section'
 import { Reveal } from './ui/Reveal'
 import { Button } from './ui/Button'
 import { ShineBorder } from './ui/ShineBorder'
+import { BrandIcon } from './ui/BrandIcon'
 
 export function Contact({ index }: { index: number }) {
   const { t, lang } = useLang()
@@ -28,19 +29,27 @@ export function Contact({ index }: { index: number }) {
               <br />
               <span className="text-accent">{t.contact.cta}</span>
             </p>
-            <div className="mb-5 flex flex-wrap justify-center gap-3">
-              <Button primary href={`mailto:${profile.email}`} className="px-3.5 text-[11px] min-[360px]:px-5 min-[360px]:text-sm">{profile.email}</Button>
+            {/* Fila 1: datos de contacto (el mail se copia al hacer click) */}
+            <div className="mb-3 flex flex-wrap justify-center gap-3">
               <button
                 type="button"
                 onClick={copy}
-                className="cursor-pointer rounded-full border border-line bg-white/4 px-4 py-3 font-mono text-sm transition hover:border-accent"
+                title={t.contact.copyHint}
+                aria-label={`${profile.email} — ${t.contact.copyHint}`}
+                className="grid cursor-pointer place-items-center rounded-full border border-accent bg-accent px-3.5 py-3 font-mono text-[11px] font-semibold text-bg transition hover:-translate-y-0.5 hover:bg-[#7dffc6] hover:shadow-[0_8px_30px_rgb(92_242_176/0.2)] min-[360px]:px-5 min-[360px]:text-sm"
               >
-                {copied ? t.contact.copied : '⧉'}
+                <span className={`col-start-1 row-start-1 transition-opacity ${copied ? 'opacity-0' : ''}`}>📨 {profile.email}</span>
+                <span aria-live="polite" className={`col-start-1 row-start-1 transition-opacity ${copied ? '' : 'opacity-0'}`}>
+                  {copied ? `✓ ${t.contact.copied}` : ''}
+                </span>
               </button>
-              <Button href={profile.phoneHref}>{profile.phone}</Button>
-              <Button href={cvUrl(lang)} download>{t.hero.cv} ↓</Button>
-              <Button href={profile.linkedin}>LinkedIn ↗</Button>
-              <Button href={profile.github}>GitHub ↗</Button>
+              <Button href={profile.phoneHref}>☎️ {profile.phone}</Button>
+            </div>
+            {/* Fila 2: enlaces */}
+            <div className="mb-6 flex flex-wrap justify-center gap-3">
+              <Button href={cvUrl(lang)} download>📄 {t.hero.cv}</Button>
+              <Button href={profile.linkedin}><BrandIcon name="linkedin" /> LinkedIn ↗</Button>
+              <Button href={profile.github}><BrandIcon name="github" /> GitHub ↗</Button>
             </div>
             <p className="font-mono text-muted">📍 {profile.location}</p>
           </div>

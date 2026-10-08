@@ -149,6 +149,7 @@ export const es = {
     big: '¿Tenés un proyecto o una propuesta?',
     cta: 'Escribime.',
     copied: '¡copiado!',
+    copyHint: 'click para copiar',
   },
   life: {
     label: 'Controles del autómata',
