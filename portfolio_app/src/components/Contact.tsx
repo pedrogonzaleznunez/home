@@ -61,12 +61,11 @@ export function Contact({ index }: { index: number }) {
               <CopyButton value={profile.phone} label={`☎️ ${profile.phone}`} />
             </div>
             {/* Fila 2: enlaces */}
-            <div className="mb-6 flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-3">
               <Button href={cvUrl(lang)} download>📄 {t.hero.cv}</Button>
               <Button href={profile.linkedin}><BrandIcon name="linkedin" /> LinkedIn ↗</Button>
               <Button href={profile.github}><BrandIcon name="github" /> GitHub ↗</Button>
             </div>
-            <p className="font-mono text-muted">📍 {profile.location}</p>
           </div>
         </ShineBorder>
       </Reveal>
