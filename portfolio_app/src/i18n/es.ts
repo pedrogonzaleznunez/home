@@ -29,10 +29,9 @@ export const es = {
         type: 'Medio tiempo',
         date: 'ago 2026 — sep 2026',
         bullets: [
-          'Lideré la migración de un servidor monolítico a una arquitectura distribuida de tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.',
-          'Optimicé el almacenamiento cloud reorganizando buckets e implementando signed URLs para acceso seguro y temporal.',
-          'Establecí un pipeline de despliegue estricto con un entorno de staging dedicado antes de cada rollout a producción.',
-          'Dashboards de Grafana a medida para observabilidad en tiempo real; servicios interconectados entre VPS con Cloudflare Tunnels (Zero Trust) y DNS avanzado.',
+          'Migré la infraestructura de un único servidor a una arquitectura distribuida de tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.',
+          'Armé un pipeline de despliegue con staging previo y dashboards de Grafana para observabilidad en tiempo real.',
+          'Aseguré el almacenamiento cloud con signed URLs e interconecté servicios entre VPS con Cloudflare Tunnels (Zero Trust).',
         ],
       },
       galoFde: {
@@ -40,9 +39,9 @@ export const es = {
         type: 'Tiempo completo',
         date: 'abr 2026 — jul 2026',
         bullets: [
-          'Diseño y despliegue de workflows de agentes de IA en producción para automatización operativa, con validaciones estrictas, reintentos y guardrails.',
-          'Sistemas RAG avanzados y structured outputs con tool/function calling y generación dinámica de JSON schemas.',
-          'Pipelines de evaluación de LLMs y regression testing para minimizar alucinaciones y monitorear la performance de los prompts.',
+          'Desarrollé y desplegué workflows de agentes de IA en producción con validaciones, reintentos y guardrails.',
+          'Implementé sistemas RAG y structured outputs con tool calling y JSON schemas dinámicos.',
+          'Armé pipelines de evaluación y regresión de LLMs para reducir alucinaciones.',
         ],
       },
       codify: {
@@ -50,9 +49,8 @@ export const es = {
         type: 'Medio tiempo',
         date: 'sep 2025 — feb 2026',
         bullets: [
-          'Desarrollo y mantenimiento de una plataforma de alta concurrencia con gran cantidad de usuarios activos.',
-          'Features full stack enfocadas en escalabilidad, performance y calidad; optimización de endpoints críticos.',
-          'Diagnóstico y resolución de incidentes en producción (hotfixes, refactors y mejoras estructurales) con metodologías ágiles.',
+          'Desarrollé features full stack para una plataforma de alta concurrencia con muchos usuarios activos.',
+          'Resolví incidentes en producción y optimicé endpoints críticos, mejorando los tiempos de respuesta.',
         ],
       },
       rocketry: {
@@ -60,8 +58,8 @@ export const es = {
         type: 'Contrato',
         date: 'ago 2025 — sep 2025',
         bullets: [
-          'Pasante full-stack dando soporte a herramientas internas y aplicaciones web del equipo.',
-          'Desarrollo frontend con Next.js y React, incluida la landing page del equipo.',
+          'Desarrollé herramientas internas y aplicaciones web para el equipo, con foco en frontend.',
+          'Desarrollé la landing page del equipo.',
         ],
       },
       research: {
@@ -69,8 +67,8 @@ export const es = {
         type: 'Medio tiempo',
         date: 'oct 2024 — sep 2025',
         bullets: [
-          'Desarrollo de un robot integrando diferentes tecnologías de electrónica y control.',
-          'Implementación de la parte electrónica del sistema, incluyendo batería, motores y el sistema de control.',
+          'Desarrollé un robot integrando electrónica y sistemas de control.',
+          'Implementé su parte electrónica: batería, motores y sistema de control.',
         ],
       },
       pushpop: {
@@ -78,9 +76,8 @@ export const es = {
         type: 'Freelance',
         date: 'mar 2025 — ago 2025',
         bullets: [
-          'Agentes de IA con Google ADK para automatización y asistencia conversacional.',
-          'Servicios REST con FastAPI y persistencia en PostgreSQL; despliegue y configuración en Azure.',
-          'Integración con WhatsApp y Telegram para operación multiplataforma.',
+          'Desarrollé agentes de IA con Google ADK, integrados con WhatsApp y Telegram.',
+          'Desarrollé servicios REST con FastAPI y PostgreSQL, desplegados en Azure.',
         ],
       },
     },

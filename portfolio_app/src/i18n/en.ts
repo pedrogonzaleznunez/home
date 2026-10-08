@@ -31,10 +31,9 @@ export const en: Dict = {
         type: 'Part-time',
         date: 'Aug 2026 — Sep 2026',
         bullets: [
-          'Led the infrastructure migration from a monolithic single server to a distributed three-server architecture, isolating monitoring services (Prometheus, Loki, Metabase) to eliminate single points of failure.',
-          'Optimized cloud storage by reorganizing bucket structures and implementing signed URLs for secure, time-limited file access.',
-          'Established a strict deployment pipeline, testing every architectural change in a dedicated staging environment before production rollouts.',
-          'Custom Grafana dashboards for real-time observability; securely interlinked services across VPS environments with Cloudflare Tunnels (Zero Trust) and advanced DNS.',
+          'Migrated infrastructure from a single server to a distributed three-server architecture, isolating monitoring (Prometheus, Loki, Metabase) to remove single points of failure.',
+          'Set up a staging-first deployment pipeline and custom Grafana dashboards for real-time observability.',
+          'Secured cloud storage with signed URLs and linked VPS services through Cloudflare Tunnels (Zero Trust).',
         ],
       },
       galoFde: {
@@ -42,9 +41,9 @@ export const en: Dict = {
         type: 'Full-time',
         date: 'Apr 2026 — Jul 2026',
         bullets: [
-          'Design and deployment of production-ready AI agent workflows for operational automation, with strict validations, retries, and guardrails.',
-          'Advanced RAG systems and structured outputs using tool/function calling and dynamic JSON schema generation.',
-          'LLM evaluation pipelines and regression testing frameworks to minimize hallucinations and monitor prompt performance.',
+          'Built and deployed production AI agent workflows with validations, retries, and guardrails.',
+          'Implemented RAG systems and structured outputs with tool calling and dynamic JSON schemas.',
+          'Created LLM evaluation and regression pipelines to reduce hallucinations.',
         ],
       },
       codify: {
@@ -52,9 +51,8 @@ export const en: Dict = {
         type: 'Part-time',
         date: 'Sep 2025 — Feb 2026',
         bullets: [
-          'Development and maintenance of a high-concurrency platform with a large number of active users.',
-          'Full stack features focused on scalability, performance, and quality; optimization of critical endpoints.',
-          'Diagnosis and resolution of production incidents (hotfixes, refactors, and structural improvements) within agile methodologies.',
+          'Developed full stack features for a high-concurrency platform with many active users.',
+          'Resolved production incidents and optimized critical endpoints, improving response times.',
         ],
       },
       rocketry: {
@@ -62,8 +60,8 @@ export const en: Dict = {
         type: 'Contract',
         date: 'Aug 2025 — Sep 2025',
         bullets: [
-          'Full-stack developer intern supporting internal tools and web applications for the Rocketry Team.',
-          'Frontend development with Next.js and React, including the team’s landing page.',
+          'Built internal tools and web apps for the team, focused on frontend.',
+          'Developed the team\'s landing page.',
         ],
       },
       research: {
@@ -71,8 +69,8 @@ export const en: Dict = {
         type: 'Part-time',
         date: 'Oct 2024 — Sep 2025',
         bullets: [
-          'Development of a robot integrating different electronics and control technologies.',
-          'Implemented the electronic side of the system, including battery, motors, and the control system.',
+          'Built a robot integrating electronics and control systems.',
+          'Implemented its electronics: battery, motors, and control system.',
         ],
       },
       pushpop: {
@@ -80,9 +78,8 @@ export const en: Dict = {
         type: 'Freelance',
         date: 'Mar 2025 — Aug 2025',
         bullets: [
-          'AI agents built with Google ADK for automation and conversational assistance.',
-          'REST services with FastAPI and PostgreSQL persistence; deployment and configuration on Azure.',
-          'Integration with WhatsApp and Telegram for multi-platform operation.',
+          'Built AI agents with Google ADK, integrated with WhatsApp and Telegram.',
+          'Developed REST services with FastAPI and PostgreSQL, deployed on Azure.',
         ],
       },
     },

@@ -58,6 +58,7 @@ Web publicada: https://pedrogonzaleznunez.github.io/home/ (Vite `base: '/home/'`
    - `portfolio_app/src/data/experience.ts`: lista de trabajos (`id`, `company`, `tags`) en orden LinkedIn.
      Si se agrega un trabajo, sumar su id al tipo `JobId`.
    - `portfolio_app/src/i18n/es.ts` y `en.ts` → `exp.jobs.<id>`: `role`, `type`, `date`, `bullets`.
+     Los `bullets` son **los mismos que en el CV** (cortos, 2–3 por trabajo).
    - Si cambian los puestos actuales: `hero.roles` (texto rotativo del hero) en ambos idiomas,
      el contador de `About.tsx` (`STATS`) y `<title>`/description en `portfolio_app/index.html`.
    - Skills / idiomas / educación de la web: `src/data/skills.ts` y `edu` en `i18n/*.ts`.
