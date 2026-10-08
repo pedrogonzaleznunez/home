@@ -75,14 +75,12 @@
 % ---------- Experiencia (dos columnas) ----------
 \newlength{\colw} \setlength{\colw}{\dimexpr(\textwidth-0.6cm)/2\relax}
 
-% entorno: \begin{experience}{TÍTULO} ...col izq... \nextcolumn ...col der... \end{experience}
-\newenvironment{experience}[1]{%
-  \begin{minipage}[t]{\colw}\vspace{0pt}%
-    \begin{minipage}{\labelw}\cvlabel{#1}\end{minipage}\par\vspace{4pt}%
-}{%
-  \end{minipage}\par
-}
-\newcommand{\nextcolumn}{\end{minipage}\hspace{0.6cm}\begin{minipage}[t]{\colw}\vspace{0pt}}
+% \explabel{TÍTULO} y luego una \jobrow por cada par de trabajos (quedan alineados arriba)
+\newcommand{\explabel}[1]{\begin{minipage}{\labelw}\cvlabel{#1}\end{minipage}\par\vspace{4pt}}
+% \jobrow{\job...}{\job...}
+\newcommand{\jobrow}[2]{%
+  \begin{minipage}[t]{\colw}\vspace{0pt}#1\end{minipage}\hspace{0.6cm}%
+  \begin{minipage}[t]{\colw}\vspace{0pt}#2\end{minipage}\par}
 
 % \job{Puesto}{Empresa | fechas}{Tecnologías}{\item ... \item ...}
 \newcommand{\techlabel}{Technologies}

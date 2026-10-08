@@ -34,10 +34,12 @@
   html {
     scroll-padding-top: 80px;
     color-scheme: dark;
+    /* clip (no hidden): corta el scroll lateral sin crear un contenedor de scroll */
+    overflow-x: clip;
   }
   body {
     @apply bg-bg font-sans leading-relaxed text-fg antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   ::selection {
     @apply bg-accent text-bg;

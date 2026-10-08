@@ -21,39 +21,43 @@
 }
 
 \sectionrule
-% ---------- EXPERIENCE: columna izquierda | \nextcolumn | columna derecha ----------
-\begin{experience}{Professional\\Experience}
-  \job{AI Developer}{Galo AI | March 2026 -- Present}
-    {Python, SQL, OpenAI/Anthropic APIs, RAG, Prompt Engineering, LLM Ops.}{
-    \item Design and deployment of production-ready AI agent workflows focused on operational automation, implementing strict validations, retries, and guardrails to ensure reliability.
-    \item Implementation of advanced RAG (Retrieval-Augmented Generation) systems and structured outputs utilizing tool/function calling and dynamic JSON schema generation.
-    \item Development of robust LLM evaluation pipelines and regression testing frameworks to minimize hallucinations and monitor prompt performance.
-  }
-  \job{Backend Developer -- AI Agents}{Push\&Pop | August 2025 -- December 2025}
-    {Python, FastAPI, Google ADK, PostgreSQL, WhatsApp API, Telegram API, Azure.}{
-    \item Development of artificial intelligence agents using Google ADK for automation and conversational assistance.
-    \item Implementation of REST services with FastAPI and data persistence using PostgreSQL.
-    \item Integration with messaging platforms (WhatsApp and Telegram) for multi-platform operation.
-    \item Deployment and configuration of services on Azure.
-  }
-\nextcolumn
-  \job{DevOps / Cloud Engineer}{Galo AI | June 2026 -- Present}
-    {Prometheus, Loki, Grafana, Metabase, Cloudflare, VPS, DNS, Cloud Storage.}{
-    \item Optimized cloud storage architecture by reorganizing bucket structures and implementing signed URLs to ensure secure, time-limited file access.
-    \item Led infrastructure migration from a monolithic single-server setup to a distributed three-server architecture, isolating monitoring services (Prometheus, Loki, Metabase) to eliminate Single Points of Failure (SPOF).
-    \item Safeguarded data integrity by establishing a strict deployment pipeline, rigorously testing all architectural changes in a dedicated staging environment prior to production rollouts.
-    \item Engineered custom Grafana dashboards to provide comprehensive, real-time observability into system performance and resource metrics.
-    \item Resolved complex networking challenges by securely interlinking internal services across VPS environments using Cloudflare Tunnels (Zero Trust) and managing advanced DNS configurations.
-  }
-  \job{Full Stack Developer}{CodifyCo | September 2025 -- March 2026}
-    {React, Next.js, NestJS, Prisma, PostgreSQL, Docker, Coolify, AWS.}{
-    \item Development and maintenance of a high-concurrency platform with a large number of active users.
-    \item Design and implementation of full stack features focused on scalability, performance, and quality.
-    \item Diagnosis and resolution of production incidents (hotfixes, refactors, and structural improvements).
-    \item Optimization of critical endpoints and operations, improving system response times.
-    \item Work within agile methodologies, participating in analysis, development, testing, deployment, and post-release support.
-  }
-\end{experience}
+% ---------- EXPERIENCE: cada \jobrow es una fila con dos trabajos alineados ----------
+\explabel{Professional\\Experience}
+\jobrow{%
+  \job{DevOps / Cloud Engineer}{Galo AI | August 2026 -- September 2026}
+      {Prometheus, Loki, Grafana, Metabase, Cloudflare, VPS, DNS, Cloud Storage.}{
+      \item Optimized cloud storage architecture by reorganizing bucket structures and implementing signed URLs to ensure secure, time-limited file access.
+      \item Led infrastructure migration from a monolithic single-server setup to a distributed three-server architecture, isolating monitoring services (Prometheus, Loki, Metabase) to eliminate Single Points of Failure (SPOF).
+      \item Safeguarded data integrity by establishing a strict deployment pipeline, rigorously testing all architectural changes in a dedicated staging environment prior to production rollouts.
+      \item Engineered custom Grafana dashboards to provide comprehensive, real-time observability into system performance and resource metrics.
+      \item Resolved complex networking challenges by securely interlinking internal services across VPS environments using Cloudflare Tunnels (Zero Trust) and managing advanced DNS configurations.
+    }%
+}{%
+  \job{AI Developer}{Galo AI | April 2026 -- July 2026}
+      {Python, SQL, OpenAI/Anthropic APIs, RAG, Prompt Engineering, LLM Ops.}{
+      \item Design and deployment of production-ready AI agent workflows focused on operational automation, implementing strict validations, retries, and guardrails to ensure reliability.
+      \item Implementation of advanced RAG (Retrieval-Augmented Generation) systems and structured outputs utilizing tool/function calling and dynamic JSON schema generation.
+      \item Development of robust LLM evaluation pipelines and regression testing frameworks to minimize hallucinations and monitor prompt performance.
+    }%
+}
+\jobrow{%
+  \job{Full Stack Developer}{CodifyCo | September 2025 -- February 2026}
+      {React, Next.js, NestJS, Prisma, PostgreSQL, Docker, Coolify, AWS.}{
+      \item Development and maintenance of a high-concurrency platform with a large number of active users.
+      \item Design and implementation of full stack features focused on scalability, performance, and quality.
+      \item Diagnosis and resolution of production incidents (hotfixes, refactors, and structural improvements).
+      \item Optimization of critical endpoints and operations, improving system response times.
+      \item Work within agile methodologies, participating in analysis, development, testing, deployment, and post-release support.
+    }%
+}{%
+  \job{Backend Developer -- AI Agents}{Push\&Pop | March 2025 -- August 2025}
+      {Python, FastAPI, Google ADK, PostgreSQL, WhatsApp API, Telegram API, Azure.}{
+      \item Development of artificial intelligence agents using Google ADK for automation and conversational assistance.
+      \item Implementation of REST services with FastAPI and data persistence using PostgreSQL.
+      \item Integration with messaging platforms (WhatsApp and Telegram) for multi-platform operation.
+      \item Deployment and configuration of services on Azure.
+    }%
+}
 
 \sectionrule
 \cvsection{Academic\\Projects \&\\Activities}{%

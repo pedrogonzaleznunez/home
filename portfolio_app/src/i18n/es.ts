@@ -9,7 +9,7 @@ export const es = {
     contact: 'contacto',
   },
   hero: {
-    roles: ['AI Developer @ Galo AI', 'DevOps / Cloud Engineer', 'Full Stack Developer', 'Ingeniería Informática @ ITBA'],
+    roles: ['AI Developer', 'DevOps / Cloud Engineer', 'Full Stack Developer', 'Ingeniería Informática @ ITBA'],
     lead: 'Estudiante de Ingeniería Informática en el ITBA. Construyo agentes de IA en producción, infraestructura cloud resiliente y plataformas full stack.',
     talk: 'Hablemos',
     cv: 'Descargar CV',
@@ -26,7 +26,7 @@ export const es = {
     present: 'presente',
     devops: {
       role: 'DevOps / Cloud Engineer',
-      date: 'jun 2026 — presente',
+      date: 'ago 2026 — sep 2026',
       bullets: [
         'Lideré la migración de un servidor monolítico a una arquitectura distribuida de tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.',
         'Optimicé el almacenamiento cloud reorganizando buckets e implementando signed URLs para acceso seguro y temporal.',
@@ -36,7 +36,7 @@ export const es = {
     },
     ai: {
       role: 'AI Developer',
-      date: 'mar 2026 — presente',
+      date: 'abr 2026 — jul 2026',
       bullets: [
         'Diseño y despliegue de workflows de agentes de IA en producción para automatización operativa, con validaciones estrictas, reintentos y guardrails.',
         'Sistemas RAG avanzados y structured outputs con tool/function calling y generación dinámica de JSON schemas.',
@@ -45,7 +45,7 @@ export const es = {
     },
     fullstack: {
       role: 'Full Stack Developer',
-      date: 'sep 2025 — mar 2026',
+      date: 'sep 2025 — feb 2026',
       bullets: [
         'Desarrollo y mantenimiento de una plataforma de alta concurrencia con gran cantidad de usuarios activos.',
         'Features full stack enfocadas en escalabilidad, performance y calidad; optimización de endpoints críticos.',
@@ -54,7 +54,7 @@ export const es = {
     },
     backend: {
       role: 'Backend Developer — AI Agents',
-      date: 'ago 2025 — dic 2025',
+      date: 'mar 2025 — ago 2025',
       bullets: [
         'Agentes de IA con Google ADK para automatización y asistencia conversacional.',
         'Servicios REST con FastAPI y persistencia en PostgreSQL; despliegue y configuración en Azure.',
@@ -137,6 +137,7 @@ export const es = {
     random: 'random',
     clear: 'limpiar',
     rule: 'regla',
+    color: 'color',
   },
 }
 

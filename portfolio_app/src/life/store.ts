@@ -1,11 +1,13 @@
 import { useSyncExternalStore } from 'react'
 import { RULE_IDS, type RuleId } from './automata'
+import { PALETTE_IDS, type PaletteId } from './palettes'
 
 // Estado compartido entre el canvas, los controles y la terminal.
-type State = { rule: RuleId; running: boolean; gen: number }
+type State = { rule: RuleId; palette: PaletteId; running: boolean; gen: number }
 type Command = 'seed' | 'clear'
 
 const RULE_KEY = 'life-rule'
+const PALETTE_KEY = 'life-palette'
 const reduceMotion =
   typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -14,10 +16,18 @@ function savedRule(): RuleId {
     const r = localStorage.getItem(RULE_KEY) as RuleId | null
     if (r && RULE_IDS.includes(r)) return r
   } catch { /* noop */ }
-  return 'conway'
+  return 'brain'
 }
 
-let state: State = { rule: savedRule(), running: !reduceMotion, gen: 0 }
+function savedPalette(): PaletteId {
+  try {
+    const p = localStorage.getItem(PALETTE_KEY) as PaletteId | null
+    if (p && PALETTE_IDS.includes(p)) return p
+  } catch { /* noop */ }
+  return 'mint'
+}
+
+let state: State = { rule: savedRule(), palette: savedPalette(), running: !reduceMotion, gen: 0 }
 const listeners = new Set<() => void>()
 const commandListeners = new Set<(c: Command) => void>()
 
@@ -35,6 +45,10 @@ export const lifeStore = {
   setRule(rule: RuleId) {
     try { localStorage.setItem(RULE_KEY, rule) } catch { /* noop */ }
     set({ rule, gen: 0 })
+  },
+  setPalette(palette: PaletteId) {
+    try { localStorage.setItem(PALETTE_KEY, palette) } catch { /* noop */ }
+    set({ palette })
   },
   toggle: () => set({ running: !state.running }),
   setGen: (gen: number) => set({ gen }),

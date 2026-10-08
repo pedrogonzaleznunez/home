@@ -1,23 +1,24 @@
 import { useEffect, useRef } from 'react'
 import { AUTOMATA, createWorld, wrap, type World } from './automata'
 import { lifeStore } from './store'
+import { PALETTES, rgb, type Palette, type RGB } from './palettes'
 
 const STEP_MS = 95
 const GAP = 2
 const BG = '#07090d'
-// célula joven = verde menta, vieja = azul
-const YOUNG = [92, 242, 176]
-const OLD = [122, 162, 255]
-
-// Paleta precalculada por edad (0..30) para no armar strings por célula
-const AGE_COLORS = Array.from({ length: 31 }, (_, a) => {
-  const t = a / 30
-  const c = YOUNG.map((v, k) => Math.round(v + (OLD[k] - v) * t))
-  return `rgba(${c[0]},${c[1]},${c[2]},${(0.55 - t * 0.25).toFixed(3)})`
-})
 const TRAIL_STEPS = 12
-const TRAIL_COLORS = Array.from({ length: TRAIL_STEPS + 1 }, (_, k) =>
-  `rgba(122,162,255,${((k / TRAIL_STEPS) * 0.16).toFixed(3)})`)
+
+// Colores precalculados por edad (0..30) para no armar strings por célula
+function buildColors({ young, old }: Palette) {
+  const age = Array.from({ length: 31 }, (_, a) => {
+    const t = a / 30
+    const c = young.map((v, k) => Math.round(v + (old[k] - v) * t)) as RGB
+    return rgb(c, +(0.55 - t * 0.25).toFixed(3))
+  })
+  const trail = Array.from({ length: TRAIL_STEPS + 1 }, (_, k) =>
+    rgb(old, +((k / TRAIL_STEPS) * 0.16).toFixed(3)))
+  return { age, trail, ant: rgb(young) }
+}
 
 export function LifeCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -28,6 +29,7 @@ export function LifeCanvas() {
     const cell = window.innerWidth < 720 ? 9 : 12
     let world: World
     let automaton = AUTOMATA[lifeStore.get().rule]
+    let colors = buildColors(PALETTES[lifeStore.get().palette])
     let gen = 0
     let lastStep = 0
     let lastInject = 0
@@ -63,10 +65,10 @@ export function LifeCanvas() {
           const i = y * cols + x
           const s = cells[i]
           if (s) {
-            ctx.fillStyle = brain && s === 2 ? AGE_COLORS[30] : AGE_COLORS[Math.min(age[i], 30)]
+            ctx.fillStyle = brain && s === 2 ? colors.age[30] : colors.age[Math.min(age[i], 30)]
             ctx.fillRect(x * cell, y * cell, size, size)
           } else if (trail[i] > 0.02) {
-            ctx.fillStyle = TRAIL_COLORS[Math.round(trail[i] * TRAIL_STEPS)]
+            ctx.fillStyle = colors.trail[Math.round(trail[i] * TRAIL_STEPS)]
             ctx.fillRect(x * cell, y * cell, size, size)
             trail[i] *= 0.86
           } else if (trail[i]) {
@@ -76,8 +78,8 @@ export function LifeCanvas() {
       }
 
       if (world.ants.length) {
-        ctx.fillStyle = '#5cf2b0'
-        ctx.shadowColor = '#5cf2b0'
+        ctx.fillStyle = colors.ant
+        ctx.shadowColor = colors.ant
         ctx.shadowBlur = 12
         for (const a of world.ants) ctx.fillRect(a.x * cell - 1, a.y * cell - 1, size + 2, size + 2)
         ctx.shadowBlur = 0
@@ -131,8 +133,13 @@ export function LifeCanvas() {
     })
 
     let currentRule = lifeStore.get().rule
+    let currentPalette = lifeStore.get().palette
     const offStore = lifeStore.subscribe(() => {
-      const { rule } = lifeStore.get()
+      const { rule, palette } = lifeStore.get()
+      if (palette !== currentPalette) {
+        currentPalette = palette
+        colors = buildColors(PALETTES[palette])
+      }
       if (rule === currentRule) return
       currentRule = rule
       automaton = AUTOMATA[rule]

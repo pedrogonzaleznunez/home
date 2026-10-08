@@ -75,12 +75,11 @@ export function Hero() {
           alt={profile.name}
           width={132}
           height={132}
-          className="mx-auto size-33 rounded-full border-2 border-accent object-cover shadow-[0_0_0_6px_rgb(92_242_176/0.12),0_0_60px_rgb(92_242_176/0.35)]"
+          className="mx-auto size-33 rounded-full object-cover"
         />
-        <motion.p {...rise(0.1)} className="mt-7 mb-1.5 font-mono text-accent">$ whoami</motion.p>
         <h1
           aria-label={profile.name}
-          className="bg-linear-to-r from-white from-20% via-accent via-60% to-accent-2 bg-clip-text text-[clamp(2.6rem,9vw,6.2rem)] leading-[0.95] font-bold tracking-tighter whitespace-pre-line text-transparent"
+          className="mt-7 text-[clamp(2.6rem,9vw,6.2rem)] leading-[0.95] font-bold tracking-tighter whitespace-pre-line text-white"
         >
           {name || ' '}
         </h1>
