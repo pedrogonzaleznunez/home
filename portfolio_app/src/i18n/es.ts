@@ -51,8 +51,7 @@ export const es = {
         type: 'Contrato',
         date: 'ago 2025 — sep 2025',
         bullets: [
-          'Desarrollé herramientas internas y aplicaciones web para el equipo, con foco en frontend.',
-          'Desarrollé la landing page del equipo.',
+          'Desarrollé la landing page del equipo y herramientas web internas, con foco en frontend.',
         ],
       },
       research: {
@@ -60,8 +59,7 @@ export const es = {
         type: 'Medio tiempo',
         date: 'oct 2024 — sep 2025',
         bullets: [
-          'Desarrollé un robot integrando electrónica y sistemas de control.',
-          'Implementé su parte electrónica: batería, motores y sistema de control.',
+          'Desarrollé un robot integrando electrónica (batería, motores) y sistemas de control.',
         ],
       },
       pushpop: {
@@ -125,7 +123,6 @@ export const es = {
       { date: '2022 — 2027 (previsto)', title: 'Ingeniería Informática', place: 'Instituto Tecnológico de Buenos Aires (ITBA)' },
       { date: 'ago 2026 — ene 2027', title: 'Semestre de intercambio', place: 'Royal Institute of Technology (KTH)' },
       { date: '2015 — 2021', title: 'Técnico en Aviónica (Electrónico)', place: 'E.E.S.T. N.º 7 “T.R.Q.” (IMPA)' },
-      { date: '2025 — presente', title: 'Desarrollo de Software Aplicado', place: 'NestJS, Next.js, React, Docker — Udemy' },
     ],
     languagesTitle: 'idiomas',
     languages: [

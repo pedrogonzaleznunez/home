@@ -52,8 +52,7 @@ export const en: Dict = {
         type: 'Contract',
         date: 'Aug 2025 — Sep 2025',
         bullets: [
-          'Built internal tools and web apps for the team, focused on frontend.',
-          'Developed the team\'s landing page.',
+          'Built the team\'s landing page and internal web tools, focused on frontend.',
         ],
       },
       research: {
@@ -61,8 +60,7 @@ export const en: Dict = {
         type: 'Part-time',
         date: 'Oct 2024 — Sep 2025',
         bullets: [
-          'Built a robot integrating electronics and control systems.',
-          'Implemented its electronics: battery, motors, and control system.',
+          'Built a robot integrating electronics (battery, motors) and control systems.',
         ],
       },
       pushpop: {
@@ -126,7 +124,6 @@ export const en: Dict = {
       { date: '2022 — 2027 (expected)', title: 'Software Engineering', place: 'Buenos Aires Institute of Technology (ITBA)' },
       { date: 'Aug 2026 — Jan 2027', title: 'Exchange semester', place: 'Royal Institute of Technology (KTH)' },
       { date: '2015 — 2021', title: 'Avionics Technician (Electronics)', place: 'Technical School No. 7 “T.R.Q.” (IMPA)' },
-      { date: '2025 — present', title: 'Applied Software Development', place: 'NestJS, Next.js, React, Docker — Udemy' },
     ],
     languagesTitle: 'languages',
     languages: [

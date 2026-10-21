@@ -7,7 +7,7 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   { id: 'ai', items: ['RAG', 'Embeddings / pgvector', 'AI Agents', 'Multi-agent systems', 'Google ADK', 'MCP', 'Tool calling', 'Structured outputs', 'Prompt engineering', 'LLM evals'], span: 2 },
-  { id: 'languages', items: ['TypeScript', 'Python', 'Java', 'JavaScript', 'SQL', 'C', 'C#'] },
+  { id: 'languages', items: ['Python', 'TypeScript', 'Java', 'JavaScript', 'SQL', 'C', 'C#'] },
   { id: 'cloud', items: ['Docker', 'Coolify', 'Linux / VPS', 'CI/CD', 'AWS', 'Azure', 'Cloudflare', 'Prometheus', 'Loki', 'Grafana', 'Git'] },
   { id: 'backend', items: ['Node.js', 'NestJS', 'Express', 'FastAPI', 'Spring Boot', 'Django', 'REST APIs', 'Webhooks'], span: 2 },
   { id: 'frontend', items: ['React', 'Next.js', 'React Native', 'iOS'] },
