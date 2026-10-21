@@ -26,24 +26,15 @@ export const en: Dict = {
   exp: {
     title: 'Experience',
     jobs: {
-      galoSwe: {
-        role: 'Software Engineer',
-        type: 'Part-time',
-        date: 'Aug 2026 — Sep 2026',
-        bullets: [
-          'Led the migration from a single VPS to three servers, isolating monitoring (Prometheus, Loki, Metabase) to remove single points of failure.',
-          'Set up observability and data infrastructure: Grafana dashboards, Kafka, RabbitMQ and staging-first deployments.',
-          'Secured internal services with Cloudflare Tunnel (Zero Trust) and cloud storage with signed URLs.',
-        ],
-      },
-      galoFde: {
-        role: 'Forward Deployed Engineer',
+      galo: {
+        role: 'AI Engineer',
         type: 'Full-time',
-        date: 'Apr 2026 — Jul 2026',
+        date: 'Apr 2026 — Sep 2026',
         bullets: [
           'Built RAG pipelines with embeddings and pgvector to match unstructured B2B orders against product catalogs.',
-          'Shipped production AI agent workflows with tool calling, structured outputs, retries and guardrails.',
-          'Created LLM evaluation and regression pipelines to reduce hallucinations.',
+          'Shipped production AI agent workflows with tool calling, structured outputs and guardrails, backed by LLM evaluation and regression pipelines.',
+          'Developed features end to end with React, Spring Boot and PostgreSQL.',
+          'Led the migration from a single VPS to three servers with Prometheus, Loki, Metabase, Kafka and RabbitMQ, secured through Cloudflare Tunnel (Zero Trust).',
         ],
       },
       codify: {

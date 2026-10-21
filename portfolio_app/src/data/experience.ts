@@ -1,4 +1,4 @@
-export type JobId = 'galoSwe' | 'galoFde' | 'codify' | 'rocketry' | 'research' | 'pushpop'
+export type JobId = 'galo' | 'codify' | 'rocketry' | 'research' | 'pushpop'
 
 export type Job = {
   id: JobId
@@ -8,8 +8,7 @@ export type Job = {
 
 // Mismo orden que LinkedIn; los textos (puesto, tipo, fechas, bullets) están en i18n (exp.jobs.<id>)
 export const jobs: Job[] = [
-  { id: 'galoSwe', company: 'Galo AI', tags: ['Prometheus', 'Loki', 'Grafana', 'Metabase', 'Kafka', 'RabbitMQ', 'Cloudflare', 'Docker', 'VPS'] },
-  { id: 'galoFde', company: 'Galo AI', tags: ['Python', 'Spring Boot', 'React', 'PostgreSQL', 'pgvector', 'OpenAI / Anthropic APIs', 'MCP'] },
+  { id: 'galo', company: 'Galo AI', tags: ['Python', 'Spring Boot', 'React', 'PostgreSQL', 'pgvector', 'OpenAI / Anthropic APIs', 'MCP', 'Kafka', 'RabbitMQ', 'Prometheus', 'Loki', 'Grafana', 'Cloudflare', 'Docker'] },
   { id: 'codify', company: 'Codify Company', tags: ['React', 'Next.js', 'NestJS', 'Prisma', 'PostgreSQL', 'Docker', 'Coolify', 'Mercado Pago', 'AWS'] },
   { id: 'rocketry', company: 'ITBA Rocketry Team', tags: ['Next.js', 'React'] },
   { id: 'research', company: 'ITBA', tags: ['Python', 'Signal Processing'] },
