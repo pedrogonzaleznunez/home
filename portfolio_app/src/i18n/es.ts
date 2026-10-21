@@ -123,7 +123,7 @@ export const es = {
     title: 'Educación',
     items: [
       { date: '2022 — 2027 (previsto)', title: 'Ingeniería Informática', place: 'Instituto Tecnológico de Buenos Aires (ITBA)' },
-      { date: 'ago 2026 — ene 2027', title: 'Semestre de intercambio', place: 'KTH Royal Institute of Technology — Estocolmo' },
+      { date: 'ago 2026 — ene 2027', title: 'Semestre de intercambio', place: 'KTH Royal Institute of Technology' },
       { date: '2015 — 2021', title: 'Técnico en Aviónica', place: 'E.E.S.T. N.º 7 “T.R.Q.” (IMPA)' },
       { date: '2025 — presente', title: 'Desarrollo de Software Aplicado', place: 'NestJS, Next.js, React, Docker — Udemy' },
       { date: 'oct — dic 2023', title: 'Negocios Digitales', place: 'Ventas y gestión de clientes — Udemy' },
