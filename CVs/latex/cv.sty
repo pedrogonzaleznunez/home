@@ -90,7 +90,7 @@
 % \job{Puesto}{Empresa | Tipo | fechas}{Tecnologías}{\item ... \item ...}
 \newcommand{\techlabel}{Technologies}
 \newcommand{\job}[4]{%
-  {\bfseries #1}{\small\color{soft}\enspace---\enspace #2}\par
+  {\fontsize{11.5}{14}\selectfont\bfseries #1}{\small\color{soft}\enspace---\enspace #2}\par
   \begin{itemize}[leftmargin=1.1em, itemsep=0.5pt, parsep=0pt, topsep=1pt, label=\bulletsym]
     \small\linespread{0.95}\selectfont\raggedright #4
     \item \textbf{\techlabel:} #3
