@@ -13,6 +13,6 @@ export const jobs: Job[] = [
   { id: 'galo', company: 'Galo AI', url: 'https://www.soygalo.com/', tags: ['Python', 'Spring Boot', 'React', 'PostgreSQL', 'pgvector', 'OpenAI / Anthropic APIs', 'MCP', 'Kafka', 'RabbitMQ', 'Prometheus', 'Loki', 'Grafana', 'Cloudflare', 'Docker'] },
   { id: 'codify', company: 'Codify Company', url: 'https://codifyco.com/en/', tags: ['React', 'Next.js', 'NestJS', 'Prisma', 'PostgreSQL', 'Docker', 'Coolify', 'Mercado Pago', 'AWS'] },
   { id: 'pushpop', company: 'Push&Pop Growth', tags: ['Python', 'FastAPI', 'Google ADK', 'PostgreSQL', 'Docker', 'WhatsApp API', 'Telegram API', 'Azure'] },
-  { id: 'research', company: 'ITBA', tags: ['Python', 'C', 'Arduino', 'Raspberry Pi', 'ESP32', 'Signal Processing'] },
   { id: 'rocketry', company: 'ITBA Rocketry Team', url: 'https://itba-rocketry-team.vercel.app/', tags: ['Next.js', 'React', 'Vercel'] },
+  { id: 'research', company: 'ITBA', tags: ['Python', 'C', 'Arduino', 'Raspberry Pi', 'ESP32', 'Signal Processing'] },
 ]

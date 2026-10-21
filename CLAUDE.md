@@ -25,7 +25,7 @@ Web publicada: https://pedrogonzaleznunez.github.io/home/ (Vite `base: '/home/'`
 ## Reglas de trabajo
 
 - **Commit y push directo a `main`**, sin ramas ni PRs.
-- **Fuente de verdad de la experiencia laboral: LinkedIn.** Títulos, empresas, tipo de empleo (Part-time, Full-time, Contract, Freelance) y fechas tienen que coincidir con LinkedIn, tanto en el CV como en la web. El **orden** no sigue a LinkedIn: es el que eligió Pedro (AI Engineer Galo, Codify, Push&Pop, y abajo Research Assistant y Rocketry).
+- **Fuente de verdad de la experiencia laboral: LinkedIn.** Títulos, empresas, tipo de empleo (Part-time, Full-time, Contract, Freelance) y fechas tienen que coincidir con LinkedIn, tanto en el CV como en la web. El **orden** no sigue a LinkedIn: es el que eligió Pedro (AI Engineer Galo, Codify, Push&Pop, Rocketry y Research Assistant).
 - **Nada dice "Present"/"Actualidad"** salvo que Pedro siga trabajando ahí.
 - **CV ES y EN siempre sincronizados**: mismo contenido, solo traducido. Los títulos de puesto quedan en inglés en ambos (como en LinkedIn).
 - **El CV entra en UNA página.** Si se pasa, resumir bullets (Pedro prefiere bullets cortos, 2–3 por trabajo, solo lo importante) antes que achicar la letra.
