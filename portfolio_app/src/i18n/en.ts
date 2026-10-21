@@ -31,7 +31,7 @@ export const en: Dict = {
         type: 'Full-time',
         date: 'Apr 2026 — Sep 2026',
         bullets: [
-          'Built RAG pipelines with embeddings and pgvector to match unstructured B2B orders against product catalogs.',
+          'Built RAG pipelines with embeddings and pgvector to match unstructured B2B orders against product catalogs: 20k orders (US$5M+) per month for 50+ clients, saving each 10 hours on average.',
           'Shipped production AI agent workflows with tool calling, structured outputs and guardrails, backed by LLM evaluation and regression pipelines.',
           'Developed features end to end with React, Spring Boot and PostgreSQL.',
           'Led the migration from a single VPS to three servers with Prometheus, Loki, Metabase, Kafka and RabbitMQ, secured through Cloudflare Tunnel (Zero Trust).',
@@ -42,7 +42,7 @@ export const en: Dict = {
         type: 'Part-time',
         date: 'Sep 2025 — Feb 2026',
         bullets: [
-          'Built full-stack features for a high-concurrency platform; optimized endpoints and resolved production incidents.',
+          'Built full-stack features for a ticketing platform handling 200 concurrent users at peak times; optimized endpoints and resolved production incidents.',
           'Deployed containerized apps on VPS with Docker and Coolify, backed by CI/CD and automated tests.',
           'Integrated Mercado Pago payments and executed client data migrations.',
         ],
