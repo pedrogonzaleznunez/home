@@ -9,6 +9,8 @@ export const en: Dict = {
     projects: 'projects',
     education: 'education',
     contact: 'contact',
+    toDark: 'Switch to dark mode',
+    toLight: 'Switch to light mode',
   },
   hero: {
     roles: ['AI Engineer', 'Forward Deployed Engineer', 'Full-Stack Engineer', 'Software Engineering @ ITBA · Exchange @ KTH'],

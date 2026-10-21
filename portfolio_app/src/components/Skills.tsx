@@ -19,7 +19,7 @@ export function Skills() {
               <h3 className="mb-3 font-mono text-sm text-accent">// {t.skills.groups[g.id]}</h3>
               <div className="flex flex-wrap gap-2 text-sm text-body">
                 {g.items.map((s) => (
-                  <span key={s} className="rounded-md border border-line bg-white/4 px-2.5 py-1">{s}</span>
+                  <span key={s} className="rounded-md border border-line bg-tint/4 px-2.5 py-1">{s}</span>
                 ))}
               </div>
             </>

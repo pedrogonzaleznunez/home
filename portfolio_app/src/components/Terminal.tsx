@@ -128,7 +128,7 @@ export function Terminal({ index }: { index: number }) {
     <Section id="terminal" index={index} title={t.terminal.title}>
       <Reveal>
         <div
-          className="card overflow-hidden rounded-2xl border border-line bg-[#05070a]/90 font-mono text-sm shadow-[0_30px_80px_rgb(0_0_0/0.5)] backdrop-blur-xl"
+          className="card overflow-hidden rounded-2xl border border-line bg-panel/90 font-mono text-sm shadow-[0_30px_80px_rgb(0_0_0/0.25)] backdrop-blur-xl"
           onClick={() => inputRef.current?.focus({ preventScroll: true })}
         >
           <div className="flex items-center gap-2 border-b border-line px-4 py-3">

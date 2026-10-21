@@ -22,7 +22,7 @@ export function SpotlightCard({ className, children, ...props }: HTMLAttributes<
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ background: 'radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(92 242 176 / 0.09), transparent 40%)' }}
+        style={{ background: 'radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--color-accent) 9%, transparent), transparent 40%)' }}
       />
       <div className="relative">{children}</div>
     </div>

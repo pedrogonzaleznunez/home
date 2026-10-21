@@ -2,16 +2,21 @@ import { useEffect, useRef } from 'react'
 import { AUTOMATA, createWorld, wrap, type World } from './automata'
 import { lifeStore } from './store'
 import { PALETTES, rgb, type Palette, type RGB } from './palettes'
+import { themeStore, type Theme } from '../theme'
 
 const STEP_MS = 95
 const GAP = 2
-const BG = '#07090d'
+const BG: Record<Theme, string> = { dark: '#07090d', light: '#f5f6f8' }
 const TRAIL_STEPS = 12
 // Atenuación general del fondo para que el texto encima se lea mejor (1 = sin atenuar)
 const DIM = 0.7
 
-// Colores precalculados por edad (0..30) para no armar strings por célula
-function buildColors({ young, old }: Palette) {
+// Colores precalculados por edad (0..30) para no armar strings por célula.
+// En modo claro se oscurecen los colores (si no, las paletas claras no se ven sobre el fondo blanco).
+function buildColors(palette: Palette, theme: Theme) {
+  const shade = (c: RGB) => (theme === 'light' ? c.map((v) => Math.round(v * 0.62)) as RGB : c)
+  const young = shade(palette.young)
+  const old = shade(palette.old)
   const age = Array.from({ length: 31 }, (_, a) => {
     const t = a / 30
     const c = young.map((v, k) => Math.round(v + (old[k] - v) * t)) as RGB
@@ -31,7 +36,8 @@ export function LifeCanvas() {
     const cell = window.innerWidth < 720 ? 9 : 12
     let world: World
     let automaton = AUTOMATA[lifeStore.get().rule]
-    let colors = buildColors(PALETTES[lifeStore.get().palette])
+    let theme = themeStore.get()
+    let colors = buildColors(PALETTES[lifeStore.get().palette], theme)
     let lastStep = 0
     let lastInject = 0
     let raf = 0
@@ -57,7 +63,7 @@ export function LifeCanvas() {
     function draw() {
       const { cols, rows, cells, age, trail } = world
       const size = cell - GAP
-      ctx.fillStyle = BG
+      ctx.fillStyle = BG[theme]
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
       const brain = automaton.id === 'brain'
 
@@ -135,12 +141,17 @@ export function LifeCanvas() {
       const { rule, palette } = lifeStore.get()
       if (palette !== currentPalette) {
         currentPalette = palette
-        colors = buildColors(PALETTES[palette])
+        colors = buildColors(PALETTES[palette], theme)
       }
       if (rule === currentRule) return
       currentRule = rule
       automaton = AUTOMATA[rule]
       automaton.seed(world)
+    })
+
+    const offTheme = themeStore.subscribe(() => {
+      theme = themeStore.get()
+      colors = buildColors(PALETTES[lifeStore.get().palette], theme)
     })
 
     resize()
@@ -154,6 +165,7 @@ export function LifeCanvas() {
       clearTimeout(resizeTimer)
       offCommand()
       offStore()
+      offTheme()
       window.removeEventListener('pointermove', onMove)
       window.removeEventListener('click', onClick)
       window.removeEventListener('resize', onResize)

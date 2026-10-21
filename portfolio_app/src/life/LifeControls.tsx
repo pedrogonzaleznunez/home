@@ -5,7 +5,7 @@ import { lifeStore, useLife } from './store'
 import { PALETTES, PALETTE_IDS, rgb, type Palette } from './palettes'
 
 const btn =
-  'cursor-pointer rounded-full border border-transparent bg-white/5 px-3 py-1.5 transition-colors hover:border-accent hover:text-accent'
+  'cursor-pointer rounded-full border border-transparent bg-tint/5 px-3 py-1.5 transition-colors hover:border-accent hover:text-accent'
 
 const swatch = (p: Palette) => `linear-gradient(135deg, ${rgb(p.young)}, ${rgb(p.old)})`
 

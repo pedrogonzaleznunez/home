@@ -9,6 +9,9 @@
   --color-accent-2: #7aa2ff;
   --color-panel: #0e121a;
   --color-line: rgb(255 255 255 / 0.08);
+  /* tinte para fondos sutiles (bg-tint/5): blanco en oscuro, negro en claro */
+  --color-tint: #ffffff;
+  --color-accent-hover: #7dffc6;
 
   --font-sans: 'Space Grotesk', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -28,6 +31,21 @@
     from { background-position: 0% 0%; }
     to { background-position: 200% 200%; }
   }
+}
+
+/* Modo claro: mismos tokens, otros valores (ver src/theme.ts) */
+html[data-theme='light'] {
+  --color-bg: #f5f6f8;
+  --color-fg: #0d1117;
+  --color-muted: #5b6475;
+  --color-body: #2e3644;
+  --color-accent: #087a4c;
+  --color-accent-2: #3454d1;
+  --color-panel: #ffffff;
+  --color-line: rgb(0 0 0 / 0.1);
+  --color-tint: #000000;
+  --color-accent-hover: #0a9460;
+  color-scheme: light;
 }
 
 @layer base {
@@ -52,7 +70,8 @@ html.lenis, html.lenis body { height: auto; }
 .lenis [data-lenis-prevent] { overscroll-behavior: contain; }
 
 .vignette {
-  background: radial-gradient(ellipse at center, transparent 0%, rgb(7 9 13 / 0.55) 70%, rgb(7 9 13 / 0.9) 100%);
+  background: radial-gradient(ellipse at center, transparent 0%,
+    color-mix(in srgb, var(--color-bg) 55%, transparent) 70%, color-mix(in srgb, var(--color-bg) 90%, transparent) 100%);
 }
 
 /* Cursor custom: se esconde el nativo solo con mouse */

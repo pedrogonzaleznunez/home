@@ -8,6 +8,8 @@ export const es = {
     projects: 'proyectos',
     education: 'educación',
     contact: 'contacto',
+    toDark: 'Cambiar a modo oscuro',
+    toLight: 'Cambiar a modo claro',
   },
   hero: {
     roles: ['AI Engineer', 'Forward Deployed Engineer', 'Full-Stack Engineer', 'Ingeniería Informática @ ITBA · Intercambio @ KTH'],

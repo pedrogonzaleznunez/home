@@ -25,6 +25,15 @@
     <meta name="twitter:title" content="Pedro González Núñez — AI Engineer" />
     <meta name="twitter:description" content="AI Engineer building LLM-powered products: RAG pipelines, AI agents and production infrastructure. Software Engineering @ ITBA · Exchange @ KTH." />
     <meta name="twitter:image" content="https://pedrogonzaleznunez.github.io/home/og.png" />
+    <!-- Tema antes del primer pintado (sin parpadeo); después lo maneja src/theme.ts -->
+    <script>
+      try {
+        var t = localStorage.getItem('theme')
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        document.documentElement.dataset.theme = t
+        if (t === 'light') document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f5f6f8')
+      } catch (e) {}
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -31,7 +31,7 @@ export function Education({ index }: { index: number }) {
                   <Flag code={l.flag} className="h-3.5 w-[21px]" />
                   {l.name}
                 </span>
-                <span className="h-1.5 overflow-hidden rounded-full bg-white/6">
+                <span className="h-1.5 overflow-hidden rounded-full bg-tint/6">
                   <motion.i
                     className="block h-full rounded-full bg-linear-to-r from-accent to-accent-2"
                     initial={{ width: 0 }}

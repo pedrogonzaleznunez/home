@@ -31,8 +31,8 @@ function CopyButton({ value, label, primary }: { value: string; label: string; p
       aria-label={`${value} — ${t.contact.copyHint}`}
       className={`${pill} ${
         primary
-          ? 'border-accent bg-accent font-semibold text-bg hover:bg-[#7dffc6]'
-          : 'border-line bg-white/4 backdrop-blur-md hover:border-accent'
+          ? 'border-accent bg-accent font-semibold text-bg hover:bg-accent-hover'
+          : 'border-line bg-tint/4 backdrop-blur-md hover:border-accent'
       }`}
     >
       <span className={`col-start-1 row-start-1 transition-opacity ${copied ? 'opacity-0' : ''}`}>{label}</span>

@@ -4,8 +4,9 @@ import { profile } from '../data/profile'
 import { Reveal } from './ui/Reveal'
 import { SpotlightCard } from './ui/SpotlightCard'
 import { Button } from './ui/Button'
+import { useTheme } from '../theme'
 
-const THEME = { light: ['#11161f', '#1b4a3a', '#2a8562', '#43c08c', '#5cf2b0'], dark: ['#11161f', '#1b4a3a', '#2a8562', '#43c08c', '#5cf2b0'] }
+const THEME = { light: ['#e4e7ec', '#a6e9c9', '#4fc98f', '#16a067', '#087a4c'], dark: ['#11161f', '#1b4a3a', '#2a8562', '#43c08c', '#5cf2b0'] }
 const MONTHS = {
   es: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
   en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -13,6 +14,7 @@ const MONTHS = {
 
 export function GithubActivity() {
   const { t, lang } = useLang()
+  const { theme } = useTheme()
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-8">
       <Reveal>
@@ -24,7 +26,7 @@ export function GithubActivity() {
           <div data-lenis-prevent className="gh-calendar overflow-x-auto pb-2">
             <GitHubCalendar
               username={profile.githubUser}
-              colorScheme="dark"
+              colorScheme={theme}
               theme={THEME}
               blockSize={11}
               blockMargin={3}

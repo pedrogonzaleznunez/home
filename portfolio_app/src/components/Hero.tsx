@@ -53,7 +53,7 @@ export function Hero() {
         />
         <h1
           aria-label={profile.name}
-          className="mt-7 text-[clamp(2.6rem,9vw,6.2rem)] leading-[0.95] font-bold tracking-tighter whitespace-pre-line text-white"
+          className="mt-7 text-[clamp(2.6rem,9vw,6.2rem)] leading-[0.95] font-bold tracking-tighter whitespace-pre-line text-fg"
         >
           {first}{'\n'}{rest.join(' ')}
         </h1>
@@ -61,7 +61,7 @@ export function Hero() {
           {role}
           <span className="ml-0.5 animate-blink text-accent">▋</span>
         </p>
-        <motion.p {...rise(0.1)} className="mx-auto max-w-xl text-lg text-white [text-shadow:0_1px_12px_#07090d,0_0_4px_#07090d]">
+        <motion.p {...rise(0.1)} className="mx-auto max-w-xl text-lg text-fg [text-shadow:0_1px_12px_var(--color-bg),0_0_4px_var(--color-bg)]">
           {t.hero.lead}
         </motion.p>
         <motion.div {...rise(0.2)} className="mt-9 flex flex-wrap justify-center gap-3">
