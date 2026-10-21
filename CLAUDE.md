@@ -70,4 +70,5 @@ Web publicada: https://pedrogonzaleznunez.github.io/home/ (Vite `base: '/home/'`
 ## Otros
 
 - Proyectos: agregar elementos en `portfolio_app/src/data/projects.ts`; con la lista vacía la sección no se muestra.
+- `npm run build` pre-renderiza la web (`src/entry-server.tsx` + `scripts/prerender.mjs`): el `index.html` publicado trae el contenido en inglés (para scrapers/buscadores) y se genera `llms.txt` desde los mismos datos. El código que corre durante el render no puede usar `window`/`document` sin chequear `typeof window`.
 - Requiere LaTeX con `latexmk` (instalado vía Homebrew `texlive`) y Node 22+.

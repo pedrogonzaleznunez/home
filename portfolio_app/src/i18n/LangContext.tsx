@@ -8,6 +8,7 @@ const dicts: Record<Lang, Dict> = { es, en }
 const STORAGE_KEY = 'lang'
 
 function initialLang(): Lang {
+  if (typeof window === 'undefined') return 'en' // pre-render: el HTML estático va en inglés
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved === 'es' || saved === 'en') return saved

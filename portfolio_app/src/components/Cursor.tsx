@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring } from 'motion/react'
 
 // Cursor con forma de célula que sigue al mouse con inercia. Solo en dispositivos con mouse.
 export function Cursor() {
-  const [enabled] = useState(() => window.matchMedia('(pointer: fine)').matches)
+  const [enabled] = useState(() => typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches)
   const [hover, setHover] = useState(false)
   const [visible, setVisible] = useState(false)
   const x = useMotionValue(-100)

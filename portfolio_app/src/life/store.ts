@@ -59,5 +59,5 @@ export const lifeStore = {
 }
 
 export function useLife() {
-  return useSyncExternalStore(lifeStore.subscribe, lifeStore.get)
+  return useSyncExternalStore(lifeStore.subscribe, lifeStore.get, lifeStore.get)
 }

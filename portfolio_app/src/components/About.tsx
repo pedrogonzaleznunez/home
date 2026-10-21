@@ -13,7 +13,8 @@ function Counter({ to }: { to: number }) {
     const c = animate(0, to, { duration: 1.2, ease: 'easeOut', onUpdate: (v) => { ref.current!.textContent = String(Math.round(v)) } })
     return () => c.stop()
   }, [inView, to])
-  return <span ref={ref}>0</span>
+  // en el pre-render (sin window) va el número final, para que el HTML estático no diga "0"
+  return <span ref={ref}>{typeof window === 'undefined' ? to : 0}</span>
 }
 
 const STATS = [5, 4, 3]
