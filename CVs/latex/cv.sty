@@ -61,13 +61,14 @@
 
 % ---------- Encabezado simple (una columna, sin foto ni fecha de nacimiento) ----------
 % Solo texto (sin íconos) para que los ATS lo lean bien.
-% \cvheadersimple{nombre}{email}{teléfono}{ubicación}{web}{linkedin}{github}
+% \cvheadersimple{nombre}{titular}{email}{teléfono}{ubicación}{web}{linkedin}{github}
 \newcommand{\hsep}{{\color{soft}\enspace|\enspace}}
-\newcommand{\cvheadersimple}[7]{%
+\newcommand{\cvheadersimple}[8]{%
   {\centering
-    {\fontsize{22}{26}\selectfont\bfseries\MakeUppercase{#1}}\par\vspace{5pt}
-    {\small #4\hsep\href{mailto:#2}{#2}\hsep #3\par\vspace{2pt}
-     \href{https://#5}{#5}\hsep\href{https://#6}{#6}\hsep\href{https://#7}{#7}\par}%
+    {\fontsize{22}{26}\selectfont\bfseries\MakeUppercase{#1}}\par\vspace{3pt}
+    {\fontsize{11.5}{14}\selectfont #2}\par\vspace{4pt}
+    {\small #5\hsep\href{mailto:#3}{#3}\hsep #4\par\vspace{2pt}
+     \href{https://#6}{#6}\hsep\href{https://#7}{#7}\hsep\href{https://#8}{#8}\par}%
   }%
 }
 
