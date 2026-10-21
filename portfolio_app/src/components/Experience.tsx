@@ -16,8 +16,8 @@ export function Experience() {
           return (
             <li key={job.id}>
               <SpotlightCard>
-                <h3 className="text-xl font-bold">{text.role}</h3>
-                <p className="mt-1 mb-4 font-mono text-xs text-muted">{job.company} · {text.type} · {text.date}</p>
+                <h3 className="text-xl font-bold">{text.role} <span className="text-muted">-</span> {job.company}</h3>
+                <p className="mt-1 mb-4 font-mono text-xs text-muted">{text.type} | {text.date}</p>
                 <div className="flex flex-col gap-5 md:flex-row md:items-start md:gap-8">
                   <ul className="flex-1 list-disc space-y-1.5 pl-4 text-body marker:text-accent">
                     {text.bullets.map((b) => <li key={b}>{b}</li>)}

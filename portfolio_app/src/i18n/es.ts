@@ -28,7 +28,7 @@ export const es = {
       galo: {
         role: 'AI Engineer',
         type: 'Tiempo completo',
-        date: 'abr 2026 — sep 2026',
+        date: 'Abril 2026 – Septiembre 2026',
         bullets: [
           'Desarrollé pipelines RAG con retrieval híbrido (búsqueda semántica con pgvector + fuzzy matching) sobre catálogos normalizados (unidades, marcas, variantes, SKUs) para matchear pedidos B2B no estructurados: 20k pedidos (más de US$5M) por mes para más de 50 clientes.',
           'Puse en producción workflows de agentes de IA con tool calling, structured outputs y guardrails; armé pipelines de evaluación y regresión sobre pedidos reales que miden la precisión del match de productos y la calidad de la respuesta al cliente.',
@@ -39,7 +39,7 @@ export const es = {
       codify: {
         role: 'Software Engineer',
         type: 'Medio tiempo',
-        date: 'sep 2025 — feb 2026',
+        date: 'Septiembre 2025 – Febrero 2026',
         bullets: [
           'Desarrollé features full stack para una ticketera con 200 usuarios concurrentes en horas pico; optimicé endpoints y resolví incidentes en producción.',
           'Desplegué aplicaciones en contenedores sobre VPS con Docker y Coolify, con CI/CD y tests automatizados.',
@@ -49,7 +49,7 @@ export const es = {
       rocketry: {
         role: 'Full-stack Developer',
         type: 'Contrato',
-        date: 'ago 2025 — sep 2025',
+        date: 'Agosto 2025 – Septiembre 2025',
         bullets: [
           'Desarrollé la landing page del equipo y herramientas web internas, con foco en frontend.',
         ],
@@ -57,7 +57,7 @@ export const es = {
       research: {
         role: 'Research Assistant',
         type: 'Medio tiempo',
-        date: 'oct 2024 — sep 2025',
+        date: 'Octubre 2024 – Septiembre 2025',
         bullets: [
           'Desarrollé un robot integrando electrónica (batería, motores) y sistemas de control.',
         ],
@@ -65,7 +65,7 @@ export const es = {
       pushpop: {
         role: 'AI Engineer',
         type: 'Freelance',
-        date: 'mar 2025 — ago 2025',
+        date: 'Marzo 2025 – Agosto 2025',
         bullets: [
           'Diseñé un sistema multi-agente donde un orquestador LLM delega tareas en agentes especializados, construido y trazado con Google ADK.',
           'Desarrollé un servicio FastAPI para webhooks de WhatsApp y Telegram en tiempo real, con historial en PostgreSQL.',

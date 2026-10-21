@@ -29,7 +29,7 @@ export const en: Dict = {
       galo: {
         role: 'AI Engineer',
         type: 'Full-time',
-        date: 'Apr 2026 — Sep 2026',
+        date: 'April 2026 – September 2026',
         bullets: [
           'Built RAG pipelines with hybrid retrieval (pgvector semantic search + fuzzy matching) over normalized catalogs (units, brands, variants, SKUs) to match unstructured B2B orders: 20k orders (US$5M+) per month for 50+ clients.',
           'Shipped production AI agent workflows with tool calling, structured outputs and guardrails; built eval and regression pipelines on real orders measuring product-match accuracy and customer-facing response quality.',
@@ -40,7 +40,7 @@ export const en: Dict = {
       codify: {
         role: 'Software Engineer',
         type: 'Part-time',
-        date: 'Sep 2025 — Feb 2026',
+        date: 'September 2025 – February 2026',
         bullets: [
           'Built full-stack features for a ticketing platform handling 200 concurrent users at peak times; optimized endpoints and resolved production incidents.',
           'Deployed containerized apps on VPS with Docker and Coolify, backed by CI/CD and automated tests.',
@@ -50,7 +50,7 @@ export const en: Dict = {
       rocketry: {
         role: 'Full-stack Developer',
         type: 'Contract',
-        date: 'Aug 2025 — Sep 2025',
+        date: 'August 2025 – September 2025',
         bullets: [
           'Built the team\'s landing page and internal web tools, focused on frontend.',
         ],
@@ -58,7 +58,7 @@ export const en: Dict = {
       research: {
         role: 'Research Assistant',
         type: 'Part-time',
-        date: 'Oct 2024 — Sep 2025',
+        date: 'October 2024 – September 2025',
         bullets: [
           'Built a robot integrating electronics (battery, motors) and control systems.',
         ],
@@ -66,7 +66,7 @@ export const en: Dict = {
       pushpop: {
         role: 'AI Engineer',
         type: 'Freelance',
-        date: 'Mar 2025 — Aug 2025',
+        date: 'March 2025 – August 2025',
         bullets: [
           'Designed a multi-agent system where an LLM orchestrator delegates tasks to specialized agents, built and traced with Google ADK.',
           'Built a FastAPI service for real-time WhatsApp and Telegram webhooks, with history in PostgreSQL.',
