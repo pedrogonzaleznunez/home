@@ -7,17 +7,19 @@ const STEP_MS = 95
 const GAP = 2
 const BG = '#07090d'
 const TRAIL_STEPS = 12
+// Atenuación general del fondo para que el texto encima se lea mejor (1 = sin atenuar)
+const DIM = 0.7
 
 // Colores precalculados por edad (0..30) para no armar strings por célula
 function buildColors({ young, old }: Palette) {
   const age = Array.from({ length: 31 }, (_, a) => {
     const t = a / 30
     const c = young.map((v, k) => Math.round(v + (old[k] - v) * t)) as RGB
-    return rgb(c, +(0.55 - t * 0.25).toFixed(3))
+    return rgb(c, +((0.55 - t * 0.25) * DIM).toFixed(3))
   })
   const trail = Array.from({ length: TRAIL_STEPS + 1 }, (_, k) =>
-    rgb(old, +((k / TRAIL_STEPS) * 0.16).toFixed(3)))
-  return { age, trail, ant: rgb(young) }
+    rgb(old, +((k / TRAIL_STEPS) * 0.16 * DIM).toFixed(3)))
+  return { age, trail, ant: rgb(young, DIM) }
 }
 
 export function LifeCanvas() {

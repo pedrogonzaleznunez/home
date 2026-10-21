@@ -25,7 +25,7 @@ Web publicada: https://pedrogonzaleznunez.github.io/home/ (Vite `base: '/home/'`
 ## Reglas de trabajo
 
 - **Commit y push directo a `main`**, sin ramas ni PRs.
-- **Fuente de verdad de la experiencia laboral: LinkedIn.** Títulos, empresas, tipo de empleo (Part-time, Full-time, Contract, Freelance), fechas y orden tienen que coincidir con LinkedIn, tanto en el CV como en la web.
+- **Fuente de verdad de la experiencia laboral: LinkedIn.** Títulos, empresas, tipo de empleo (Part-time, Full-time, Contract, Freelance) y fechas tienen que coincidir con LinkedIn, tanto en el CV como en la web. El **orden** no sigue a LinkedIn: es el que eligió Pedro (AI Engineer Galo, Codify, Push&Pop, y abajo Research Assistant y Rocketry).
 - **Nada dice "Present"/"Actualidad"** salvo que Pedro siga trabajando ahí.
 - **CV ES y EN siempre sincronizados**: mismo contenido, solo traducido. Los títulos de puesto quedan en inglés en ambos (como en LinkedIn).
 - **El CV entra en UNA página.** Si se pasa, resumir bullets (Pedro prefiere bullets cortos, 2–3 por trabajo, solo lo importante) antes que achicar la letra.
@@ -35,19 +35,17 @@ Web publicada: https://pedrogonzaleznunez.github.io/home/ (Vite `base: '/home/'`
 ## Flujo: actualizar experiencia / CV (ambos idiomas + web)
 
 1. **CV en LaTeX** — editar `CVs/latex/cv_en.tex` y `CVs/latex/cv_es.tex` (los dos).
-   - La experiencia va en filas de dos trabajos alineados, en el orden de LinkedIn:
+   - CV de **una sola columna** (pensado para que lo lean bien los ATS), sin foto ni fecha de nacimiento
+     (el encabezado viejo quedó comentado en los `.tex`; `photo.jpg` se conserva). Un `\job` por trabajo,
+     uno debajo del otro, en el orden elegido por Pedro (lo más relevante primero):
      ```latex
      \explabel{Professional Experience}
-     \jobrow{%
        \job{Puesto}{Empresa | Tipo | Mes Año -- Mes Año}
            {Tecnologías.}{
            \item ...
-         }%
-     }{%
-       \job{...}{...}{...}{ \item ... }%
-     }
+         }
      ```
-   - Otras macros (en `cv.sty`): `\cvsection{TÍTULO}{...}`, `\edu{Institución}{Detalle | fechas}`,
+   - Otras macros (en `cv.sty`): `\cvheadersimple{...}` (encabezado), `\cvsection{TÍTULO}{...}`, `\edu{Institución}{Detalle | fechas}`,
      `\inlinelist{a}{b}{c}`, `\lang{Idioma}{Nivel}`.
    - Escapar `&` como `\&` y `#` como `\#`.
 2. **Compilar**: `./CVs/latex/build.sh` (o `./CVs/latex/build.sh en` para uno solo).
@@ -55,7 +53,7 @@ Web publicada: https://pedrogonzaleznunez.github.io/home/ (Vite `base: '/home/'`
 3. **Revisar visualmente** los PDFs (p. ej. `pdftoppm -r 80 -png CVs/CV_PedroGonzalezNunez_EN.pdf /tmp/cv`
    y mirar la imagen): alineación de filas, que nada se corte, 1 página.
 4. **Web** — reflejar los mismos cambios:
-   - `portfolio_app/src/data/experience.ts`: lista de trabajos (`id`, `company`, `tags`) en orden LinkedIn.
+   - `portfolio_app/src/data/experience.ts`: lista de trabajos (`id`, `company`, `tags`) en el mismo orden que el CV.
      Si se agrega un trabajo, sumar su id al tipo `JobId`.
    - `portfolio_app/src/i18n/es.ts` y `en.ts` → `exp.jobs.<id>`: `role`, `type`, `date`, `bullets`.
      Los `bullets` son **los mismos que en el CV** (cortos, 2–3 por trabajo).
@@ -71,4 +69,5 @@ Web publicada: https://pedrogonzaleznunez.github.io/home/ (Vite `base: '/home/'`
 
 - Proyectos: agregar elementos en `portfolio_app/src/data/projects.ts`; con la lista vacía la sección no se muestra.
 - `npm run build` pre-renderiza la web (`src/entry-server.tsx` + `scripts/prerender.mjs`): el `index.html` publicado trae el contenido en inglés (para scrapers/buscadores) y se genera `llms.txt` desde los mismos datos. El código que corre durante el render no puede usar `window`/`document` sin chequear `typeof window`.
+- Imagen de vista previa (Open Graph): `public/og.png`, se regenera con `node scripts/og/render.mjs` desde `scripts/og/og.html` si cambia el nombre o el rol.
 - Requiere LaTeX con `latexmk` (instalado vía Homebrew `texlive`) y Node 22+.

@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- Plantilla de la imagen Open Graph (public/og.png, 1200x630). Para regenerarla: node scripts/og/render.mjs -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #07090d; color: #e8ecf1; font-family: 'Space Grotesk', sans-serif; position: relative; }
+  canvas { position: absolute; inset: 0; }
+  .fade { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 38% 50%, #07090df2 30%, #07090d99 70%, #07090d40 100%); }
+  .card { position: absolute; inset: 0; display: flex; align-items: center; gap: 64px; padding: 0 96px; }
+  img { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; border: 3px solid #5cf2b055; flex-shrink: 0; }
+  h1 { font-size: 76px; line-height: 0.95; letter-spacing: -0.04em; font-weight: 700; color: #fff; }
+  .role { margin-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 600; color: #5cf2b0; }
+  .tag { margin-top: 18px; font-size: 25px; color: #c3cbd8; max-width: 620px; line-height: 1.35; }
+  .url { position: absolute; left: 96px; bottom: 44px; font-family: 'JetBrains Mono', monospace; font-size: 20px; color: #8a94a6; }
+  .url b { color: #5cf2b0; font-weight: 400; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1200" height="630"></canvas>
+<div class="fade"></div>
+<div class="card">
+  <img src="../../public/profile_pic.png" alt="" />
+  <div>
+    <h1>Pedro<br />González Núñez</h1>
+    <div class="role">AI Engineer_</div>
+    <div class="tag">RAG pipelines, AI agents and the infrastructure to run them in production.</div>
+  </div>
+</div>
+<div class="url"><b>›</b> pedrogonzaleznunez.github.io/home</div>
+<script>
+  // Fondo de células con la paleta "mint" de la web (semilla fija: la imagen sale siempre igual)
+  const ctx = document.getElementById('c').getContext('2d')
+  let seed = 7
+  const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647
+  const cell = 14, young = [92, 242, 176], old = [122, 162, 255]
+  for (let y = 0; y < 630 / cell; y++) for (let x = 0; x < 1200 / cell; x++) {
+    if (rand() > 0.3) continue
+    const t = rand(), c = young.map((v, k) => Math.round(v + (old[k] - v) * t))
+    ctx.fillStyle = `rgba(${c},${(0.5 - t * 0.25).toFixed(2)})`
+    ctx.fillRect(x * cell, y * cell, cell - 2, cell - 2)
+  }
+</script>
+</body>
+</html>

@@ -5,39 +5,13 @@ import { cvUrl, profile } from '../data/profile'
 import { prefersReducedMotion } from '../lib'
 import { Button } from './ui/Button'
 
-const GLYPHS = '█▓▒░<>/\\{}[]#$%01'
-
-// Texto que se "descifra" letra por letra
-function useScramble(text: string, delay = 300) {
-  const [out, setOut] = useState(() => (prefersReducedMotion() ? text : ''))
-  useEffect(() => {
-    if (prefersReducedMotion()) { setOut(text); return }
-    let frame = 0
-    let raf = 0
-    const start = performance.now() + delay
-    const tick = (now: number) => {
-      if (now < start) { raf = requestAnimationFrame(tick); return }
-      frame++
-      const revealed = Math.floor(frame / 2)
-      setOut(
-        text
-          .split('')
-          .map((ch, i) => (ch === ' ' || ch === '\n' || i < revealed ? ch : GLYPHS[Math.floor(Math.random() * GLYPHS.length)]))
-          .join(''),
-      )
-      if (revealed < text.length) raf = requestAnimationFrame(tick)
-    }
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [text, delay])
-  return out
-}
-
+// Arranca mostrando el primer rol completo (se lee sin esperar) y después rota borrando/escribiendo
 function useTyped(words: string[]) {
-  const [out, setOut] = useState(() => (prefersReducedMotion() ? words[0] : ''))
+  const [out, setOut] = useState(words[0])
   useEffect(() => {
-    if (prefersReducedMotion()) { setOut(words[0]); return }
-    let r = 0, c = 0, deleting = false
+    setOut(words[0])
+    if (prefersReducedMotion()) return
+    let r = 0, c = words[0].length, deleting = true
     let timer = 0
     const tick = () => {
       const word = words[r]
@@ -48,22 +22,22 @@ function useTyped(words: string[]) {
       else if (deleting && c === 0) { deleting = false; r = (r + 1) % words.length; delay = 300 }
       timer = window.setTimeout(tick, delay)
     }
-    timer = window.setTimeout(tick, 1400)
+    timer = window.setTimeout(tick, 3500)
     return () => clearTimeout(timer)
   }, [words])
   return out
 }
 
+// Entrada corta: el contenido del hero tiene que leerse en el primer segundo
 const rise = (delay: number) => ({
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 12 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.9, delay, ease: [0.2, 0.8, 0.2, 1] as const },
+  transition: { duration: 0.5, delay, ease: [0.2, 0.8, 0.2, 1] as const },
 })
 
 export function Hero() {
   const { t, lang } = useLang()
   const [first, ...rest] = profile.name.split(' ')
-  const name = useScramble(`${first}\n${rest.join(' ')}`)
   const role = useTyped(t.hero.roles)
 
   return (
@@ -81,16 +55,16 @@ export function Hero() {
           aria-label={profile.name}
           className="mt-7 text-[clamp(2.6rem,9vw,6.2rem)] leading-[0.95] font-bold tracking-tighter whitespace-pre-line text-white"
         >
-          {name || ' '}
+          {first}{'\n'}{rest.join(' ')}
         </h1>
         <p className="mt-6 mb-2.5 min-h-[1.6em] font-mono text-[clamp(1rem,2.4vw,1.3rem)]">
           {role}
           <span className="ml-0.5 animate-blink text-accent">▋</span>
         </p>
-        <motion.p {...rise(0.35)} className="mx-auto max-w-xl text-lg text-white [text-shadow:0_1px_12px_#07090d,0_0_4px_#07090d]">
+        <motion.p {...rise(0.1)} className="mx-auto max-w-xl text-lg text-white [text-shadow:0_1px_12px_#07090d,0_0_4px_#07090d]">
           {t.hero.lead}
         </motion.p>
-        <motion.div {...rise(0.5)} className="mt-9 flex flex-wrap justify-center gap-3">
+        <motion.div {...rise(0.2)} className="mt-9 flex flex-wrap justify-center gap-3">
           <Button primary href="#contact">{t.hero.talk}</Button>
           <Button href={cvUrl(lang)} download>{t.hero.cv} ↓</Button>
           <Button href={profile.github}>GitHub ↗</Button>

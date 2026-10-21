@@ -26,14 +26,15 @@
 \setlength{\parskip}{0pt}
 \linespread{1.0}
 \hyphenpenalty=10000 \exhyphenpenalty=10000 % sin cortes de palabras
-\newcommand{\bulletsym}{{\scriptsize\textbullet}}
+\newcommand{\bulletsym}{\textbullet}
 
 % ---------- Medidas ----------
 \newlength{\labelw}  \setlength{\labelw}{3.6cm}  % columna de títulos de sección
 \newlength{\gutter}  \setlength{\gutter}{0.5cm}
 \newlength{\bodyw}   \setlength{\bodyw}{\dimexpr\textwidth-\labelw-\gutter\relax}
 
-% ---------- Encabezado ----------
+% ---------- Encabezado con foto (dos columnas) ----------
+% Ya no se usa: el CV es de una columna y sin foto (ver \cvheadersimple). Se deja por si se vuelve.
 % \cvheader{foto}{nombre}{fecha nac.}{email}{teléfono}{ubicación}{linkedin}{github}
 \newcommand{\cvheader}[8]{%
   \begin{minipage}[t]{\labelw}
@@ -58,37 +59,40 @@
   \end{minipage}\par
 }
 
-% ---------- Secciones ----------
+% ---------- Encabezado simple (una columna, sin foto ni fecha de nacimiento) ----------
+% Solo texto (sin íconos) para que los ATS lo lean bien.
+% \cvheadersimple{nombre}{email}{teléfono}{ubicación}{web}{linkedin}{github}
+\newcommand{\hsep}{{\color{soft}\enspace|\enspace}}
+\newcommand{\cvheadersimple}[7]{%
+  {\centering
+    {\fontsize{22}{26}\selectfont\bfseries\MakeUppercase{#1}}\par\vspace{5pt}
+    {\small #4\hsep\href{mailto:#2}{#2}\hsep #3\par\vspace{2pt}
+     \href{https://#5}{#5}\hsep\href{https://#6}{#6}\hsep\href{https://#7}{#7}\par}%
+  }%
+}
+
+% ---------- Secciones (una columna) ----------
 \newcommand{\sectionrule}{\par\vspace{3pt}{\color{ink}\rule{\linewidth}{0.6pt}}\par\vspace{3pt}}
 
-\newcommand{\cvlabel}[1]{%
-  {\raggedleft\bfseries\MakeUppercase{#1}\par}%
+% \cvheading{TÍTULO}: título de sección a ancho completo con una línea debajo
+\newcommand{\cvheading}[1]{%
+  \par\vspace{6pt}{\bfseries\MakeUppercase{#1}}\par\vspace{-5pt}%
+  {\color{ink}\rule{\linewidth}{0.6pt}}\par\vspace{-1pt}%
 }
 
-% \cvsection{TÍTULO}{contenido}: título a la izquierda, contenido a la derecha
-\newcommand{\cvsection}[2]{%
-  \begin{minipage}[t]{\labelw}\vspace{0pt}\cvlabel{#1}\end{minipage}%
-  \hspace{\gutter}%
-  \begin{minipage}[t]{\bodyw}\vspace{0pt}\small\raggedright #2\end{minipage}\par
-}
+% \cvsection{TÍTULO}{contenido}
+\newcommand{\cvsection}[2]{\cvheading{#1}{\small\raggedright #2\par}}
 
-% ---------- Experiencia (dos columnas) ----------
-\newlength{\colw} \setlength{\colw}{\dimexpr(\textwidth-0.6cm)/2\relax}
+% ---------- Experiencia (un trabajo debajo del otro) ----------
+% \explabel{TÍTULO} y luego un \job por trabajo
+\newcommand{\explabel}[1]{\cvheading{#1}}
 
-% \explabel{TÍTULO} y luego una \jobrow por cada par de trabajos (quedan alineados arriba)
-\newcommand{\explabel}[1]{{\bfseries\MakeUppercase{#1}\par}\vspace{3pt}}
-% \jobrow{\job...}{\job...}
-\newcommand{\jobrow}[2]{%
-  \begin{minipage}[t]{\colw}\vspace{0pt}#1\end{minipage}\hspace{0.6cm}%
-  \begin{minipage}[t]{\colw}\vspace{0pt}#2\end{minipage}\par}
-
-% \job{Puesto}{Empresa | fechas}{Tecnologías}{\item ... \item ...}
+% \job{Puesto}{Empresa | Tipo | fechas}{Tecnologías}{\item ... \item ...}
 \newcommand{\techlabel}{Technologies}
 \newcommand{\job}[4]{%
-  {\bfseries #1}\par
-  {\footnotesize\color{soft}(#2)}\par\vspace{1pt}
-  \begin{itemize}[leftmargin=1em, itemsep=0.6pt, parsep=0pt, topsep=1pt, label=\bulletsym]
-    \footnotesize\linespread{0.95}\selectfont\raggedright #4
+  {\bfseries #1}{\small\color{soft}\enspace---\enspace #2}\par
+  \begin{itemize}[leftmargin=1.1em, itemsep=0.5pt, parsep=0pt, topsep=1pt, label=\bulletsym]
+    \small\linespread{0.95}\selectfont\raggedright #4
     \item \textbf{\techlabel:} #3
   \end{itemize}
   \vspace{4pt}

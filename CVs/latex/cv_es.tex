@@ -6,12 +6,15 @@
 
 \begin{document}
 
-\cvheader{photo.jpg}{Pedro Gonzalez Nuñez}
-  {7 de septiembre de 2002}{pedrogonzalezhudson@gmail.com}
-  {+54 9 11 5029 7907}{Buenos Aires, Argentina}
-  {www.linkedin.com/in/pedrogonzaleznunez/}{github.com/pedrogonzaleznunez}
+% Encabezado anterior, con foto y fecha de nacimiento (se dejó de usar; photo.jpg sigue en la carpeta):
+% \cvheader{photo.jpg}{Pedro Gonzalez Nuñez}
+%   {7 de septiembre de 2002}{pedrogonzalezhudson@gmail.com}
+%   {+54 9 11 5029 7907}{Buenos Aires, Argentina}
+%   {www.linkedin.com/in/pedrogonzaleznunez/}{github.com/pedrogonzaleznunez}
+\cvheadersimple{Pedro Gonzalez Nuñez}
+  {pedrogonzalezhudson@gmail.com}{+54 9 11 5029 7907}{Buenos Aires, Argentina}
+  {pedrogonzaleznunez.github.io/home}{linkedin.com/in/pedrogonzaleznunez}{github.com/pedrogonzaleznunez}
 
-\vspace{4pt}
 \cvsection{Sobre mí}{%
   Ingeniero de IA y full-stack: construyo productos basados en LLMs, pipelines RAG, agentes de IA
   y la infraestructura para correrlos en producción. Disfruto todo el camino del prototipo a
@@ -19,63 +22,50 @@
   ITBA (egreso previsto 2027).%
 }
 
-\sectionrule
-% ---------- EXPERIENCE: mismo orden que LinkedIn; cada \jobrow = fila de dos trabajos alineados ----------
+% ---------- EXPERIENCE: un \job por trabajo, en el orden elegido por Pedro (lo más relevante primero) ----------
 \explabel{Experiencia Laboral}
-\jobrow{%
   \job{AI Engineer}{Galo AI | Tiempo completo | Abril 2026 -- Septiembre 2026}
       {Python, Spring Boot, React, PostgreSQL, pgvector, OpenAI/Anthropic APIs, MCP, Kafka, RabbitMQ, Prometheus, Loki, Grafana, Cloudflare, Docker.}{
       \item Desarrollé pipelines RAG con embeddings y pgvector para matchear pedidos B2B no estructurados contra catálogos de productos.
       \item Puse en producción workflows de agentes de IA con tool calling, structured outputs y guardrails, con pipelines de evaluación y regresión de LLMs.
       \item Desarrollé features end to end con React, Spring Boot y PostgreSQL.
       \item Lideré la migración de un VPS único a tres servidores con Prometheus, Loki, Metabase, Kafka y RabbitMQ, asegurados con Cloudflare Tunnel (Zero Trust).
-    }%
-}{%
+    }
   \job{Software Engineer}{Codify Company | Medio tiempo | Septiembre 2025 -- Febrero 2026}
       {React, Next.js, NestJS, Prisma, PostgreSQL, Docker, Coolify, Mercado Pago, AWS.}{
       \item Desarrollé features full stack para una plataforma de alta concurrencia; optimicé endpoints y resolví incidentes en producción.
       \item Desplegué aplicaciones en contenedores sobre VPS con Docker y Coolify, con CI/CD y tests automatizados.
       \item Integré pagos con Mercado Pago y ejecuté migraciones de datos de clientes.
-    }%
-}
-\jobrow{%
+    }
   \job{AI Engineer}{Push\&Pop Growth | Freelance | Marzo 2025 -- Agosto 2025}
       {Python, FastAPI, Google ADK, PostgreSQL, Docker, WhatsApp API, Telegram API, Azure.}{
       \item Diseñé un sistema multi-agente donde un orquestador LLM delega tareas en agentes especializados, construido y trazado con Google ADK.
       \item Desarrollé un servicio FastAPI para webhooks de WhatsApp y Telegram en tiempo real, con historial en PostgreSQL.
       \item Lo containericé con Docker y lo desplegué en Azure.
-    }%
-}{%
+    }
   \job{Research Assistant}{ITBA | Medio tiempo | Octubre 2024 -- Septiembre 2025}
       {Python, Signal Processing.}{
       \item Desarrollé un robot integrando electrónica y sistemas de control.
       \item Implementé su parte electrónica: batería, motores y sistema de control.
-    }%
-}
-\jobrow{%
+    }
   \job{Full-stack Developer}{ITBA Rocketry Team | Contrato | Agosto 2025 -- Septiembre 2025}
       {Next.js, React.}{
       \item Desarrollé herramientas internas y aplicaciones web para el equipo, con foco en frontend.
       \item Desarrollé la landing page del equipo.
-    }%
-}{%
-}
+    }
 
-\sectionrule
-\cvsection{Formación\\Académica}{%
+\cvsection{Formación Académica}{%
   \edu{Instituto Tecnológico de Buenos Aires (ITBA)}{Ingeniería Informática | 2022 -- 2027 (previsto)}
   \edu{Royal Institute of Technology (KTH)}{Semestre de intercambio | Agosto 2026 -- Enero 2027}
   \edu{Cursos de Desarrollo de Software (Udemy)}{NestJS, Next.js, React, Docker | 2025 -- Actualidad}
   \edu{E.E.S.T. N.º~7 ``T.R.Q.'' (IMPA)}{Técnico en Aviónica (Electrónico) | 2015 -- 2021}%
 }
 
-\sectionrule
-\cvsection{Intereses \&\\Hobbies}{%
+\cvsection{Intereses \& Hobbies}{%
   \inlinelist{Fútbol}{Trenes en miniatura}{Física aplicada (Relatividad y Electromagnetismo)}%
 }
 
-\sectionrule
-\cvsection{Habilidades\\Técnicas}{%
+\cvsection{Habilidades Técnicas}{%
   \textbf{IA / LLM:} RAG, Embeddings y búsqueda vectorial (pgvector), Agentes de IA, Sistemas multi-agente, Google ADK, MCP, Tool Calling, Prompt Engineering, Evals de LLMs\\
   \textbf{Lenguajes:} TypeScript, Python, Java, JavaScript, SQL, C, C\#\\
   \textbf{Backend:} Node.js (NestJS, Express), FastAPI, Spring Boot, Django, APIs REST, Webhooks\\
@@ -86,7 +76,6 @@
   \textbf{Hardware:} Arduino, ESP32, Raspberry Pi%
 }
 
-\sectionrule
 \cvsection{Idiomas}{%
   \lang{Español}{C2 (Nativo)}\lang{Inglés}{C1 (Avanzado)}\lang{Alemán}{B1 (Intermedio)}\lang{Francés}{A1 (Básico)}%
 }
