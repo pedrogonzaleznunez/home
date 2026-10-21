@@ -19,7 +19,7 @@ export const es = {
   about: {
     title: 'Sobre mí',
     p1: 'Ingeniero de IA y full-stack: construyo productos basados en LLMs, pipelines RAG, agentes de IA y la infraestructura para correrlos en producción. Disfruto todo el camino del prototipo a producción: backend, frontend, despliegue y monitoreo.',
-    p2: 'Estudiante de Ingeniería Informática en el ITBA (egreso previsto 2027), actualmente de intercambio en KTH Royal Institute of Technology, Estocolmo. Abierto a puestos de AI Engineer, Forward Deployed Engineer y full-stack.',
+    p2: 'Estudiante de Ingeniería Informática en el ITBA (egreso previsto 2027). Abierto a puestos de AI Engineer, Forward Deployed Engineer y full-stack.',
     stats: ['experiencias laborales', 'años de ingeniería', 'idiomas extranjeros'],
   },
   exp: {

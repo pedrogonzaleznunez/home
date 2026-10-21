@@ -20,7 +20,7 @@ export const en: Dict = {
   about: {
     title: 'About me',
     p1: 'AI and full-stack engineer building LLM-powered products: RAG pipelines, AI agents and the infrastructure to run them in production. I enjoy the full path from prototype to production: backend, frontend, deployment and monitoring.',
-    p2: 'Software Engineering student at ITBA (expected 2027), currently on exchange at KTH Royal Institute of Technology in Stockholm. Open to AI Engineer, Forward Deployed Engineer and full-stack roles.',
+    p2: 'Software Engineering student at ITBA (expected 2027). Open to AI Engineer, Forward Deployed Engineer and full-stack roles.',
     stats: ['professional roles', 'years of engineering', 'foreign languages'],
   },
   exp: {
