@@ -22,7 +22,7 @@ export function Experience() {
                   <ul className="flex-1 list-disc space-y-1.5 pl-4 text-body marker:text-accent">
                     {text.bullets.map((b) => <li key={b}>{b}</li>)}
                   </ul>
-                  {job.url && <SitePreview id={job.id} url={job.url} company={job.company} />}
+                  {job.url && <SitePreview id={job.id} url={job.url} company={job.company} compact={text.bullets.length < 3} />}
                 </div>
                 <div className="pt-2">
                   <Tags items={job.tags} />
@@ -36,8 +36,9 @@ export function Experience() {
   )
 }
 
-// Mini ventana de navegador con la captura de la web de la empresa (public/previews/<id>.webp); abre el sitio
-function SitePreview({ id, url, company }: { id: string; url: string; company: string }) {
+// Mini ventana de navegador con la captura de la web de la empresa (public/previews/<id>.webp); abre el sitio.
+// compact: más chica, para cards con pocos bullets (que no quede un hueco al lado del texto)
+function SitePreview({ id, url, company, compact }: { id: string; url: string; company: string; compact?: boolean }) {
   const host = new URL(url).hostname.replace(/^www\./, '')
   return (
     <a
@@ -45,7 +46,7 @@ function SitePreview({ id, url, company }: { id: string; url: string; company: s
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${company} — ${host}`}
-      className="group/preview block w-full shrink-0 overflow-hidden md:w-72 lg:w-80 rounded-lg border border-line bg-bg/60 transition-colors hover:border-accent/50"
+      className={`group/preview block w-full shrink-0 overflow-hidden ${compact ? 'md:w-52 lg:w-56' : 'md:w-72 lg:w-80'} rounded-lg border border-line bg-bg/60 transition-colors hover:border-accent/50`}
     >
       <div className="flex items-center gap-1.5 border-b border-line px-3 py-1.5">
         <span className="size-2 rounded-full bg-line" />

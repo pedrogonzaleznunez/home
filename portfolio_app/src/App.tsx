@@ -39,7 +39,7 @@ export default function App() {
         <Contact index={6 + offset} />
       </main>
       <footer className="relative z-[2] px-4 pt-7 pb-24 text-center font-mono text-xs text-muted sm:px-12">
-        © {new Date().getFullYear()} - Made by {profile.name}
+        © {new Date().getFullYear()} - Made with love by {profile.name}
       </footer>
       <LifeControls />
     </LangProvider>
