@@ -105,12 +105,15 @@ export const es = {
       cv: 'descarga mi CV',
       life: 'cambia el fondo: life conway|brain|ant|daynight',
       lang: 'cambia el idioma: lang es|en',
+      theme: 'cambia el tema: theme light|dark',
       clear: 'limpia la terminal',
     },
     cvDownloading: 'descargando CV…',
     lifeSet: (r: string) => `fondo cambiado a ${r}`,
     lifeUsage: 'uso: life conway|brain|ant|daynight',
     langUsage: 'uso: lang es|en',
+    themeSet: (th: string) => `tema cambiado a ${th}`,
+    themeUsage: 'uso: theme light|dark (sin argumento, alterna)',
     sudo: 'buen intento 😏 este incidente será reportado.',
   },
   github: {
@@ -134,7 +137,8 @@ export const es = {
       { name: 'Francés', flag: 'fr' as FlagCode, level: 'A1', pct: 20 },
     ],
     hobbiesTitle: 'fuera del código',
-    hobbies: ['⚽ Fútbol', '🚂 Trenes en miniatura', '⚛️ Física aplicada — relatividad y electromagnetismo'],
+    // los íconos están en Education.tsx (HOBBY_ICONS), en el mismo orden
+    hobbies: ['Fútbol', 'Trenes en miniatura', 'Física aplicada — relatividad y electromagnetismo'],
   },
   contact: {
     title: 'Contacto',

@@ -6,12 +6,14 @@ import { Reveal } from './ui/Reveal'
 import { Button } from './ui/Button'
 import { ShineBorder } from './ui/ShineBorder'
 import { BrandIcon } from './ui/BrandIcon'
+import { IconCheck, IconFileText, IconMail, IconPhone } from '@tabler/icons-react'
+import type { ReactNode } from 'react'
 
 const pill =
   'grid cursor-pointer place-items-center rounded-full border px-3.5 py-3 font-mono text-[11px] transition hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgb(92_242_176/0.2)] min-[360px]:px-5 min-[360px]:text-sm'
 
 // Botón que copia `value` al portapapeles y muestra "¡copiado!" sin cambiar de ancho
-function CopyButton({ value, label, primary }: { value: string; label: string; primary?: boolean }) {
+function CopyButton({ value, label, primary }: { value: string; label: ReactNode; primary?: boolean }) {
   const { t } = useLang()
   const [copied, setCopied] = useState(false)
 
@@ -35,9 +37,9 @@ function CopyButton({ value, label, primary }: { value: string; label: string; p
           : 'border-line bg-tint/4 backdrop-blur-md hover:border-accent'
       }`}
     >
-      <span className={`col-start-1 row-start-1 transition-opacity ${copied ? 'opacity-0' : ''}`}>{label}</span>
-      <span aria-live="polite" className={`col-start-1 row-start-1 transition-opacity ${copied ? '' : 'opacity-0'}`}>
-        {copied ? `✓ ${t.contact.copied}` : ''}
+      <span className={`col-start-1 row-start-1 inline-flex items-center gap-2 transition-opacity ${copied ? 'opacity-0' : ''}`}>{label}</span>
+      <span aria-live="polite" className={`col-start-1 row-start-1 inline-flex items-center justify-center gap-2 transition-opacity ${copied ? '' : 'opacity-0'}`}>
+        {copied && <><IconCheck size={16} aria-hidden /> {t.contact.copied}</>}
       </span>
     </button>
   )
@@ -57,12 +59,12 @@ export function Contact({ index }: { index: number }) {
             </p>
             {/* Fila 1: datos de contacto (mail y teléfono se copian al hacer click) */}
             <div className="mb-3 flex flex-wrap justify-center gap-3">
-              <CopyButton primary value={profile.email} label={`📨 ${profile.email}`} />
-              <CopyButton value={profile.phone} label={`☎️ ${profile.phone}`} />
+              <CopyButton primary value={profile.email} label={<><IconMail size={16} aria-hidden /> {profile.email}</>} />
+              <CopyButton value={profile.phone} label={<><IconPhone size={16} aria-hidden /> {profile.phone}</>} />
             </div>
             {/* Fila 2: enlaces */}
             <div className="flex flex-wrap justify-center gap-3">
-              <Button href={cvUrl(lang)} download>📄 {t.hero.cv}</Button>
+              <Button href={cvUrl(lang)} download><IconFileText size={16} aria-hidden /> {t.hero.cv}</Button>
               <Button href={profile.linkedin}><BrandIcon name="linkedin" /> LinkedIn ↗</Button>
               <Button href={profile.github}><BrandIcon name="github" /> GitHub ↗</Button>
             </div>

@@ -4,13 +4,14 @@ import { cvUrl, profile } from '../data/profile'
 import { jobs } from '../data/experience'
 import { skillGroups } from '../data/skills'
 import { lifeStore } from '../life/store'
+import { themeStore } from '../theme'
 import { AUTOMATA, RULE_IDS, type RuleId } from '../life/automata'
 import { Section } from './ui/Section'
 import { Reveal } from './ui/Reveal'
 
 type Line = { id: number; kind: 'in' | 'out'; body: ReactNode }
 
-const COMMANDS = ['help', 'whoami', 'experience', 'skills', 'education', 'languages', 'contact', 'cv', 'life', 'lang', 'clear'] as const
+const COMMANDS = ['help', 'whoami', 'experience', 'skills', 'education', 'languages', 'contact', 'cv', 'life', 'lang', 'theme', 'clear'] as const
 const PROMPT = 'guest@pgn:~$'
 
 let lineId = 0
@@ -81,6 +82,12 @@ export function Terminal({ index }: { index: number }) {
       case 'lang':
         if (arg === 'es' || arg === 'en') { setLang(arg); return [] }
         return [out(t.terminal.langUsage)]
+      case 'theme': {
+        const next = arg ?? (themeStore.get() === 'dark' ? 'light' : 'dark')
+        if (next !== 'light' && next !== 'dark') return [out(t.terminal.themeUsage)]
+        themeStore.set(next)
+        return [out(t.terminal.themeSet(next))]
+      }
       case 'clear':
         return 'clear'
       case 'sudo':
@@ -110,12 +117,12 @@ export function Terminal({ index }: { index: number }) {
       e.preventDefault()
       const [cmd, arg] = value.trimStart().split(/\s+/)
       if (arg !== undefined) {
-        const opts = cmd === 'life' ? RULE_IDS : cmd === 'lang' ? ['es', 'en'] : []
+        const opts = cmd === 'life' ? RULE_IDS : cmd === 'lang' ? ['es', 'en'] : cmd === 'theme' ? ['light', 'dark'] : []
         const match = opts.filter((o) => o.startsWith(arg))
         if (match.length === 1) setValue(`${cmd} ${match[0]}`)
       } else {
         const match = COMMANDS.filter((c) => c.startsWith(cmd ?? ''))
-        if (match.length === 1) setValue(match[0] + (match[0] === 'life' || match[0] === 'lang' ? ' ' : ''))
+        if (match.length === 1) setValue(match[0] + (match[0] === 'life' || match[0] === 'lang' || match[0] === 'theme' ? ' ' : ''))
         else if (match.length > 1) setLines((l) => [...l, out(<span className="text-muted">{match.join('  ')}</span>)])
       }
     } else if (e.key === 'l' && e.ctrlKey) {

@@ -4,6 +4,10 @@ import { Section } from './ui/Section'
 import { SpotlightCard } from './ui/SpotlightCard'
 import { Reveal } from './ui/Reveal'
 import { Flag } from './ui/Flag'
+import { IconAtom, IconBallFootball, IconTrain } from '@tabler/icons-react'
+
+// Íconos de t.edu.hobbies, en el mismo orden
+const HOBBY_ICONS = [IconBallFootball, IconTrain, IconAtom]
 
 export function Education({ index }: { index: number }) {
   const { t } = useLang()
@@ -49,8 +53,11 @@ export function Education({ index }: { index: number }) {
           <SpotlightCard className="h-full">
             <h3 className="mb-2 font-mono text-sm text-accent">// {t.edu.hobbiesTitle}</h3>
             <ul>
-              {t.edu.hobbies.map((h) => (
-                <li key={h} className="border-b border-dashed border-line py-2.5 last:border-0">{h}</li>
+              {t.edu.hobbies.map((h, i) => (
+                <li key={h} className="flex items-center gap-2.5 border-b border-dashed border-line py-2.5 last:border-0">
+                  {(() => { const Icon = HOBBY_ICONS[i]; return Icon && <Icon size={18} aria-hidden className="shrink-0 text-accent" /> })()}
+                  {h}
+                </li>
               ))}
             </ul>
           </SpotlightCard>
