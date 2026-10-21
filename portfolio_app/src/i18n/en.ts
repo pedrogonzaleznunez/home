@@ -124,7 +124,7 @@ export const en: Dict = {
     title: 'Education',
     items: [
       { date: '2022 — 2027 (expected)', title: 'Software Engineering', place: 'Buenos Aires Institute of Technology (ITBA)' },
-      { date: 'Aug 2026 — Jan 2027', title: 'Exchange semester', place: 'KTH Royal Institute of Technology' },
+      { date: 'Aug 2026 — Jan 2027', title: 'Exchange semester', place: 'Royal Institute of Technology (KTH)' },
       { date: '2015 — 2021', title: 'Avionics Technician (Electronics)', place: 'Technical School No. 7 “T.R.Q.” (IMPA)' },
       { date: '2025 — present', title: 'Applied Software Development', place: 'NestJS, Next.js, React, Docker — Udemy' },
     ],
