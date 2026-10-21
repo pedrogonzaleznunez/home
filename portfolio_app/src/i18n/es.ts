@@ -10,16 +10,16 @@ export const es = {
     contact: 'contacto',
   },
   hero: {
-    roles: ['Software Engineer', 'Forward Deployed Engineer', 'AI Software Engineer', 'Ingeniería Informática @ ITBA'],
-    lead: 'Estudiante de Ingeniería Informática en el ITBA. Construyo agentes de IA en producción, infraestructura cloud resiliente y plataformas full stack.',
+    roles: ['AI Engineer', 'Forward Deployed Engineer', 'Full-Stack Engineer', 'Ingeniería Informática @ ITBA · Intercambio @ KTH'],
+    lead: 'Ingeniero de IA y full-stack. Construyo productos basados en LLMs (pipelines RAG, agentes de IA) y la infraestructura para correrlos en producción.',
     talk: 'Hablemos',
     cv: 'Descargar CV',
     hint: '',
   },
   about: {
     title: 'Sobre mí',
-    p1: 'Estudiante de cuarto año de Ingeniería Informática con una base sólida en desarrollo de software, automatización y sistemas de inteligencia artificial. Tengo experiencia tanto en proyectos de investigación académica como en entornos de desarrollo profesional, combinando programación, análisis matemático y trabajo en equipo.',
-    p2: 'Me interesa especialmente aplicar la tecnología para resolver problemas complejos y optimizar procesos en contextos reales y multidisciplinarios.',
+    p1: 'Ingeniero de IA y full-stack: construyo productos basados en LLMs, pipelines RAG, agentes de IA y la infraestructura para correrlos en producción. Disfruto todo el camino del prototipo a producción: backend, frontend, despliegue y monitoreo.',
+    p2: 'Estudiante de Ingeniería Informática en el ITBA (egreso previsto 2027), actualmente de intercambio en KTH Royal Institute of Technology, Estocolmo. Abierto a puestos de AI Engineer, Forward Deployed Engineer y full-stack.',
     stats: ['experiencias laborales', 'años de ingeniería', 'idiomas extranjeros'],
   },
   exp: {
@@ -30,9 +30,9 @@ export const es = {
         type: 'Medio tiempo',
         date: 'ago 2026 — sep 2026',
         bullets: [
-          'Migré la infraestructura de un único servidor a una arquitectura distribuida de tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.',
-          'Armé un pipeline de despliegue con staging previo y dashboards de Grafana para observabilidad en tiempo real.',
-          'Aseguré el almacenamiento cloud con signed URLs e interconecté servicios entre VPS con Cloudflare Tunnels (Zero Trust).',
+          'Lideré la migración de un VPS único a tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.',
+          'Armé observabilidad e infraestructura de datos: dashboards de Grafana, Kafka, RabbitMQ y despliegues con staging previo.',
+          'Aseguré servicios internos con Cloudflare Tunnel (Zero Trust) y el almacenamiento cloud con signed URLs.',
         ],
       },
       galoFde: {
@@ -40,8 +40,8 @@ export const es = {
         type: 'Tiempo completo',
         date: 'abr 2026 — jul 2026',
         bullets: [
-          'Desarrollé y desplegué workflows de agentes de IA en producción con validaciones, reintentos y guardrails.',
-          'Implementé sistemas RAG y structured outputs con tool calling y JSON schemas dinámicos.',
+          'Desarrollé pipelines RAG con embeddings y pgvector para matchear pedidos B2B no estructurados contra catálogos de productos.',
+          'Puse en producción workflows de agentes de IA con tool calling, structured outputs, reintentos y guardrails.',
           'Armé pipelines de evaluación y regresión de LLMs para reducir alucinaciones.',
         ],
       },
@@ -50,8 +50,9 @@ export const es = {
         type: 'Medio tiempo',
         date: 'sep 2025 — feb 2026',
         bullets: [
-          'Desarrollé features full stack para una plataforma de alta concurrencia con muchos usuarios activos.',
-          'Resolví incidentes en producción y optimicé endpoints críticos, mejorando los tiempos de respuesta.',
+          'Desarrollé features full stack para una plataforma de alta concurrencia; optimicé endpoints y resolví incidentes en producción.',
+          'Desplegué aplicaciones en contenedores sobre VPS con Docker y Coolify, con CI/CD y tests automatizados.',
+          'Integré pagos con Mercado Pago y ejecuté migraciones de datos de clientes.',
         ],
       },
       rocketry: {
@@ -77,8 +78,9 @@ export const es = {
         type: 'Freelance',
         date: 'mar 2025 — ago 2025',
         bullets: [
-          'Desarrollé agentes de IA con Google ADK, integrados con WhatsApp y Telegram.',
-          'Desarrollé servicios REST con FastAPI y PostgreSQL, desplegados en Azure.',
+          'Diseñé un sistema multi-agente donde un orquestador LLM delega tareas en agentes especializados, construido y trazado con Google ADK.',
+          'Desarrollé un servicio FastAPI para webhooks de WhatsApp y Telegram en tiempo real, con historial en PostgreSQL.',
+          'Lo containericé con Docker y lo desplegué en Azure.',
         ],
       },
     },
@@ -89,10 +91,10 @@ export const es = {
       languages: 'lenguajes',
       frontend: 'frontend & mobile',
       backend: 'backend',
-      databases: 'bases de datos',
+      databases: 'datos',
       cloud: 'cloud & devops',
       ai: 'ia / llm',
-      testing: 'testing & qa',
+      testing: 'testing & integraciones',
       hardware: 'hardware',
     },
   },
@@ -129,7 +131,8 @@ export const es = {
   edu: {
     title: 'Educación',
     items: [
-      { date: '2022 — presente', title: 'Ingeniería Informática', place: 'Instituto Tecnológico de Buenos Aires (ITBA)' },
+      { date: '2022 — 2027 (previsto)', title: 'Ingeniería Informática', place: 'Instituto Tecnológico de Buenos Aires (ITBA)' },
+      { date: 'ago 2026 — ene 2027', title: 'Semestre de intercambio', place: 'KTH Royal Institute of Technology — Estocolmo' },
       { date: '2015 — 2021', title: 'Técnico en Aviónica', place: 'E.E.S.T. N.º 7 “T.R.Q.” (IMPA)' },
       { date: '2025 — presente', title: 'Desarrollo de Software Aplicado', place: 'NestJS, Next.js, React, Docker — Udemy' },
       { date: 'oct — dic 2023', title: 'Negocios Digitales', place: 'Ventas y gestión de clientes — Udemy' },

@@ -11,16 +11,16 @@ export const en: Dict = {
     contact: 'contact',
   },
   hero: {
-    roles: ['Software Engineer', 'Forward Deployed Engineer', 'AI Software Engineer', 'Computer Engineering @ ITBA'],
-    lead: 'Computer Engineering student at ITBA. I build production AI agents, resilient cloud infrastructure and full stack platforms.',
+    roles: ['AI Engineer', 'Forward Deployed Engineer', 'Full-Stack Engineer', 'Software Engineering @ ITBA · Exchange @ KTH'],
+    lead: 'AI and full-stack engineer. I build LLM-powered products (RAG pipelines, AI agents) and the infrastructure to run them in production.',
     talk: "Let's talk",
     cv: 'Download CV',
     hint: '',
   },
   about: {
     title: 'About me',
-    p1: 'Fourth-year Computer Engineering student with a solid background in software development, automation, and artificial intelligence systems. I have experience in both academic research projects and professional development environments, combining programming, mathematical analysis, and teamwork.',
-    p2: 'I am particularly interested in applying technology to solve complex problems and optimize processes in real-world and multidisciplinary contexts.',
+    p1: 'AI and full-stack engineer building LLM-powered products: RAG pipelines, AI agents and the infrastructure to run them in production. I enjoy the full path from prototype to production: backend, frontend, deployment and monitoring.',
+    p2: 'Software Engineering student at ITBA (expected 2027), currently on exchange at KTH Royal Institute of Technology in Stockholm. Open to AI Engineer, Forward Deployed Engineer and full-stack roles.',
     stats: ['professional roles', 'years of engineering', 'foreign languages'],
   },
   exp: {
@@ -31,9 +31,9 @@ export const en: Dict = {
         type: 'Part-time',
         date: 'Aug 2026 — Sep 2026',
         bullets: [
-          'Migrated infrastructure from a single server to a distributed three-server architecture, isolating monitoring (Prometheus, Loki, Metabase) to remove single points of failure.',
-          'Set up a staging-first deployment pipeline and custom Grafana dashboards for real-time observability.',
-          'Secured cloud storage with signed URLs and linked VPS services through Cloudflare Tunnels (Zero Trust).',
+          'Led the migration from a single VPS to three servers, isolating monitoring (Prometheus, Loki, Metabase) to remove single points of failure.',
+          'Set up observability and data infrastructure: Grafana dashboards, Kafka, RabbitMQ and staging-first deployments.',
+          'Secured internal services with Cloudflare Tunnel (Zero Trust) and cloud storage with signed URLs.',
         ],
       },
       galoFde: {
@@ -41,8 +41,8 @@ export const en: Dict = {
         type: 'Full-time',
         date: 'Apr 2026 — Jul 2026',
         bullets: [
-          'Built and deployed production AI agent workflows with validations, retries, and guardrails.',
-          'Implemented RAG systems and structured outputs with tool calling and dynamic JSON schemas.',
+          'Built RAG pipelines with embeddings and pgvector to match unstructured B2B orders against product catalogs.',
+          'Shipped production AI agent workflows with tool calling, structured outputs, retries and guardrails.',
           'Created LLM evaluation and regression pipelines to reduce hallucinations.',
         ],
       },
@@ -51,8 +51,9 @@ export const en: Dict = {
         type: 'Part-time',
         date: 'Sep 2025 — Feb 2026',
         bullets: [
-          'Developed full stack features for a high-concurrency platform with many active users.',
-          'Resolved production incidents and optimized critical endpoints, improving response times.',
+          'Built full-stack features for a high-concurrency platform; optimized endpoints and resolved production incidents.',
+          'Deployed containerized apps on VPS with Docker and Coolify, backed by CI/CD and automated tests.',
+          'Integrated Mercado Pago payments and executed client data migrations.',
         ],
       },
       rocketry: {
@@ -78,8 +79,9 @@ export const en: Dict = {
         type: 'Freelance',
         date: 'Mar 2025 — Aug 2025',
         bullets: [
-          'Built AI agents with Google ADK, integrated with WhatsApp and Telegram.',
-          'Developed REST services with FastAPI and PostgreSQL, deployed on Azure.',
+          'Designed a multi-agent system where an LLM orchestrator delegates tasks to specialized agents, built and traced with Google ADK.',
+          'Built a FastAPI service for real-time WhatsApp and Telegram webhooks, with history in PostgreSQL.',
+          'Containerized with Docker and deployed on Azure.',
         ],
       },
     },
@@ -90,10 +92,10 @@ export const en: Dict = {
       languages: 'languages',
       frontend: 'frontend & mobile',
       backend: 'backend',
-      databases: 'databases',
+      databases: 'data',
       cloud: 'cloud & devops',
       ai: 'ai / llm',
-      testing: 'testing & qa',
+      testing: 'testing & integrations',
       hardware: 'hardware',
     },
   },
@@ -130,7 +132,8 @@ export const en: Dict = {
   edu: {
     title: 'Education',
     items: [
-      { date: '2022 — present', title: 'Computer Engineering', place: 'Buenos Aires Institute of Technology (ITBA)' },
+      { date: '2022 — 2027 (expected)', title: 'Software Engineering', place: 'Buenos Aires Institute of Technology (ITBA)' },
+      { date: 'Aug 2026 — Jan 2027', title: 'Exchange semester', place: 'KTH Royal Institute of Technology — Stockholm' },
       { date: '2015 — 2021', title: 'Aeronautical Technician', place: 'Technical School No. 7 “T.R.Q.” (IMPA)' },
       { date: '2025 — present', title: 'Applied Software Development', place: 'NestJS, Next.js, React, Docker — Udemy' },
       { date: 'Oct — Dec 2023', title: 'Digital Business', place: 'Sales and customer management — Udemy' },

@@ -8,16 +8,15 @@
 
 \cvheader{photo.jpg}{Pedro Gonzalez Nuñez}
   {7 de septiembre de 2002}{pedrogonzalezhudson@gmail.com}
-  {+54 9 11 5029 7907}{Buenos Aires, Argentina}
+  {+54 9 11 5029 7907}{Estocolmo, Suecia}
   {www.linkedin.com/in/pedrogonzaleznunez/}{github.com/pedrogonzaleznunez}
 
 \vspace{4pt}
 \cvsection{Sobre mí}{%
-  Estudiante de cuarto año de Ingeniería Informática con una sólida base en desarrollo de software,
-  automatización y sistemas de inteligencia artificial. Tengo experiencia tanto en proyectos de
-  investigación académica como en entornos de desarrollo profesional, combinando programación,
-  análisis matemático y trabajo en equipo. Me interesa especialmente aplicar la tecnología para
-  resolver problemas complejos y optimizar procesos en contextos reales y multidisciplinarios.%
+  Ingeniero de IA y full-stack: construyo productos basados en LLMs, pipelines RAG, agentes de IA
+  y la infraestructura para correrlos en producción. Disfruto todo el camino del prototipo a
+  producción: backend, frontend, despliegue y monitoreo. Estudiante de Ingeniería Informática en el
+  ITBA (egreso previsto 2027), actualmente de intercambio en KTH Royal Institute of Technology, Estocolmo.%
 }
 
 \sectionrule
@@ -25,24 +24,25 @@
 \explabel{Experiencia Laboral}
 \jobrow{%
   \job{Software Engineer}{Galo AI | Medio tiempo | Agosto 2026 -- Septiembre 2026}
-      {Prometheus, Loki, Grafana, Metabase, Cloudflare, VPS, DNS, Cloud Storage.}{
-      \item Migré la infraestructura de un único servidor a una arquitectura distribuida de tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.
-      \item Armé un pipeline de despliegue con staging previo y dashboards de Grafana para observabilidad en tiempo real.
-      \item Aseguré el almacenamiento cloud con signed URLs e interconecté servicios entre VPS con Cloudflare Tunnels (Zero Trust).
+      {Prometheus, Loki, Grafana, Metabase, Kafka, RabbitMQ, Cloudflare, Docker, VPS.}{
+      \item Lideré la migración de un VPS único a tres servidores, aislando el monitoreo (Prometheus, Loki, Metabase) para eliminar puntos únicos de falla.
+      \item Armé observabilidad e infraestructura de datos: dashboards de Grafana, Kafka, RabbitMQ y despliegues con staging previo.
+      \item Aseguré servicios internos con Cloudflare Tunnel (Zero Trust) y el almacenamiento cloud con signed URLs.
     }%
 }{%
   \job{Forward Deployed Engineer}{Galo AI | Tiempo completo | Abril 2026 -- Julio 2026}
-      {Python, SQL, OpenAI/Anthropic APIs, RAG, Prompt Engineering, LLM Ops.}{
-      \item Desarrollé y desplegué workflows de agentes de IA en producción con validaciones, reintentos y guardrails.
-      \item Implementé sistemas RAG y structured outputs con tool calling y JSON schemas dinámicos.
+      {Python, Spring Boot, React, PostgreSQL, pgvector, OpenAI/Anthropic APIs, MCP.}{
+      \item Desarrollé pipelines RAG con embeddings y pgvector para matchear pedidos B2B no estructurados contra catálogos de productos.
+      \item Puse en producción workflows de agentes de IA con tool calling, structured outputs, reintentos y guardrails.
       \item Armé pipelines de evaluación y regresión de LLMs para reducir alucinaciones.
     }%
 }
 \jobrow{%
   \job{Software Engineer}{Codify Company | Medio tiempo | Septiembre 2025 -- Febrero 2026}
-      {React, Next.js, NestJS, Prisma, PostgreSQL, Docker, Coolify, AWS.}{
-      \item Desarrollé features full stack para una plataforma de alta concurrencia con muchos usuarios activos.
-      \item Resolví incidentes en producción y optimicé endpoints críticos, mejorando los tiempos de respuesta.
+      {React, Next.js, NestJS, Prisma, PostgreSQL, Docker, Coolify, Mercado Pago, AWS.}{
+      \item Desarrollé features full stack para una plataforma de alta concurrencia; optimicé endpoints y resolví incidentes en producción.
+      \item Desplegué aplicaciones en contenedores sobre VPS con Docker y Coolify, con CI/CD y tests automatizados.
+      \item Integré pagos con Mercado Pago y ejecuté migraciones de datos de clientes.
     }%
 }{%
   \job{Full-stack Developer}{ITBA Rocketry Team | Contrato | Agosto 2025 -- Septiembre 2025}
@@ -59,15 +59,17 @@
     }%
 }{%
   \job{AI Software Engineer}{Push\&Pop Growth | Freelance | Marzo 2025 -- Agosto 2025}
-      {Python, FastAPI, Google ADK, PostgreSQL, WhatsApp API, Telegram API, Azure.}{
-      \item Desarrollé agentes de IA con Google ADK, integrados con WhatsApp y Telegram.
-      \item Desarrollé servicios REST con FastAPI y PostgreSQL, desplegados en Azure.
+      {Python, FastAPI, Google ADK, PostgreSQL, Docker, WhatsApp API, Telegram API, Azure.}{
+      \item Diseñé un sistema multi-agente donde un orquestador LLM delega tareas en agentes especializados, construido y trazado con Google ADK.
+      \item Desarrollé un servicio FastAPI para webhooks de WhatsApp y Telegram en tiempo real, con historial en PostgreSQL.
+      \item Lo containericé con Docker y lo desplegué en Azure.
     }%
 }
 
 \sectionrule
 \cvsection{Formación\\Académica}{%
-  \edu{Instituto Tecnológico de Buenos Aires (ITBA)}{Ingeniería Informática | 2022 -- Actualidad}
+  \edu{Instituto Tecnológico de Buenos Aires (ITBA)}{Ingeniería Informática | 2022 -- 2027 (previsto)}
+  \edu{KTH Royal Institute of Technology, Estocolmo}{Semestre de intercambio | Agosto 2026 -- Enero 2027}
   \edu{Cursos de Desarrollo de Software (Udemy)}{NestJS, Next.js, React, Docker | 2025 -- Actualidad}
   \edu{E.E.S.T. N.º~7 ``T.R.Q.'' (IMPA)}{Técnico en Aviónica | 2015 -- 2021}
   \edu{Curso de Negocios Digitales (Udemy)}{Ventas y manejo de clientes | Oct 2023 -- Dic 2023}%
@@ -80,12 +82,13 @@
 
 \sectionrule
 \cvsection{Habilidades\\Técnicas}{%
-  \textbf{Lenguajes:} TypeScript, Python, JavaScript, Java, C, C\#, HTML, CSS\\
-  \textbf{Frontend \& Mobile:} React, Next.js, Desarrollo iOS, React Native\\
-  \textbf{Backend:} Node.js (Express, NestJS), FastAPI, Django, Java Spring Boot\\
-  \textbf{Bases de datos:} PostgreSQL, MySQL, MongoDB, SQLite3, Prisma (ORM)\\
-  \textbf{Cloud, DevOps \& Herramientas:} AWS, Azure, Docker, Git, GitHub, Maven\\
-  \textbf{Testing \& QA:} Testing automatizado (Unit, Integration, E2E), Jest, Cypress\\
+  \textbf{IA / LLM:} RAG, Embeddings y búsqueda vectorial (pgvector), Agentes de IA, Sistemas multi-agente, Google ADK, MCP, Tool Calling, Prompt Engineering, Evals de LLMs\\
+  \textbf{Lenguajes:} TypeScript, Python, Java, JavaScript, SQL, C, C\#\\
+  \textbf{Backend:} Node.js (NestJS, Express), FastAPI, Spring Boot, Django, APIs REST, Webhooks\\
+  \textbf{Frontend \& Mobile:} React, Next.js, React Native, Desarrollo iOS\\
+  \textbf{Datos:} PostgreSQL, MySQL, MongoDB, Prisma (ORM), Kafka, RabbitMQ, Metabase\\
+  \textbf{DevOps \& Cloud:} Docker, Coolify, Linux/VPS, CI/CD, AWS, Azure, Cloudflare (Tunnel, Zero Trust), Prometheus, Loki, Grafana, Git\\
+  \textbf{Testing \& Integraciones:} Tests unit, integración y E2E (Jest, Cypress); Mercado Pago, WhatsApp API\\
   \textbf{Hardware:} Arduino, ESP32, Raspberry Pi%
 }
 

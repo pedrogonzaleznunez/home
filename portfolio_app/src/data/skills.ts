@@ -6,18 +6,18 @@ export type SkillGroup = {
 }
 
 export const skillGroups: SkillGroup[] = [
-  { id: 'ai', items: ['RAG', 'AI Agents', 'Tool calling', 'Structured outputs', 'LLM evals', 'Prompt engineering', 'Google ADK'], span: 2 },
-  { id: 'languages', items: ['TypeScript', 'Python', 'JavaScript', 'Java', 'C', 'C#', 'HTML', 'CSS'] },
-  { id: 'cloud', items: ['AWS', 'Azure', 'Docker', 'Cloudflare', 'Grafana', 'Prometheus', 'Loki', 'Git'] },
-  { id: 'backend', items: ['Node.js', 'Express', 'NestJS', 'FastAPI', 'Django', 'Spring Boot'], span: 2 },
+  { id: 'ai', items: ['RAG', 'Embeddings / pgvector', 'AI Agents', 'Multi-agent systems', 'Google ADK', 'MCP', 'Tool calling', 'Structured outputs', 'Prompt engineering', 'LLM evals'], span: 2 },
+  { id: 'languages', items: ['TypeScript', 'Python', 'Java', 'JavaScript', 'SQL', 'C', 'C#'] },
+  { id: 'cloud', items: ['Docker', 'Coolify', 'Linux / VPS', 'CI/CD', 'AWS', 'Azure', 'Cloudflare', 'Prometheus', 'Loki', 'Grafana', 'Git'] },
+  { id: 'backend', items: ['Node.js', 'NestJS', 'Express', 'FastAPI', 'Spring Boot', 'Django', 'REST APIs', 'Webhooks'], span: 2 },
   { id: 'frontend', items: ['React', 'Next.js', 'React Native', 'iOS'] },
-  { id: 'databases', items: ['PostgreSQL', 'MySQL', 'MongoDB', 'SQLite3', 'Prisma'] },
-  { id: 'testing', items: ['Unit', 'Integration', 'E2E', 'Jest', 'Cypress'], span: 2 },
+  { id: 'databases', items: ['PostgreSQL', 'pgvector', 'MySQL', 'MongoDB', 'Prisma', 'Kafka', 'RabbitMQ', 'Metabase'] },
+  { id: 'testing', items: ['Unit', 'Integration', 'E2E', 'Jest', 'Cypress', 'Mercado Pago', 'WhatsApp API'], span: 2 },
   { id: 'hardware', items: ['Arduino', 'ESP32', 'Raspberry Pi'], span: 2 },
 ]
 
 // Para el marquee
 export const marqueeTech = [
   'TypeScript', 'Python', 'React', 'Next.js', 'NestJS', 'FastAPI', 'PostgreSQL', 'Docker',
-  'AWS', 'Azure', 'Cloudflare', 'Grafana', 'Prometheus', 'Prisma', 'OpenAI', 'Anthropic', 'Google ADK',
+  'AWS', 'Azure', 'Cloudflare', 'Grafana', 'Prometheus', 'Prisma', 'pgvector', 'Kafka', 'OpenAI', 'Anthropic', 'Google ADK', 'MCP',
 ]

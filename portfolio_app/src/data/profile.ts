@@ -4,7 +4,7 @@ export const profile = {
   email: 'pedrogonzalezhudson@gmail.com',
   phone: '+54 9 11 5029 7907',
   phoneHref: 'tel:+5491150297907',
-  location: 'Buenos Aires, Argentina',
+  location: 'Stockholm, Sweden',
   linkedin: 'https://www.linkedin.com/in/pedrogonzaleznunez/',
   github: 'https://github.com/pedrogonzaleznunez',
   githubUser: 'pedrogonzaleznunez',

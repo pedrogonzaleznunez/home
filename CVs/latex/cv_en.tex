@@ -8,16 +8,15 @@
 
 \cvheader{photo.jpg}{Pedro Gonzalez Nuñez}
   {September 7, 2002}{pedrogonzalezhudson@gmail.com}
-  {+54 9 11 5029 7907}{Buenos Aires, Argentina}
+  {+54 9 11 5029 7907}{Stockholm, Sweden}
   {www.linkedin.com/in/pedrogonzaleznunez/}{github.com/pedrogonzaleznunez}
 
 \vspace{4pt}
 \cvsection{About me}{%
-  Fourth-year Computer Engineering student with a solid background in software development,
-  automation, and artificial intelligence systems. I have experience in both academic research
-  projects and professional development environments, combining programming, mathematical
-  analysis, and teamwork. I am particularly interested in applying technology to solve complex
-  problems and optimize processes in real-world and multidisciplinary contexts.%
+  AI and full-stack engineer building LLM-powered products: RAG pipelines, AI agents and the
+  infrastructure to run them in production. I enjoy the full path from prototype to production:
+  backend, frontend, deployment and monitoring. Software Engineering student at ITBA (expected 2027),
+  currently on exchange at KTH Royal Institute of Technology in Stockholm.%
 }
 
 \sectionrule
@@ -25,24 +24,25 @@
 \explabel{Professional Experience}
 \jobrow{%
   \job{Software Engineer}{Galo AI | Part-time | August 2026 -- September 2026}
-      {Prometheus, Loki, Grafana, Metabase, Cloudflare, VPS, DNS, Cloud Storage.}{
-      \item Migrated infrastructure from a single server to a distributed three-server architecture, isolating monitoring (Prometheus, Loki, Metabase) to remove single points of failure.
-      \item Set up a staging-first deployment pipeline and custom Grafana dashboards for real-time observability.
-      \item Secured cloud storage with signed URLs and linked VPS services through Cloudflare Tunnels (Zero Trust).
+      {Prometheus, Loki, Grafana, Metabase, Kafka, RabbitMQ, Cloudflare, Docker, VPS.}{
+      \item Led the migration from a single VPS to three servers, isolating monitoring (Prometheus, Loki, Metabase) to remove single points of failure.
+      \item Set up observability and data infrastructure: Grafana dashboards, Kafka, RabbitMQ and staging-first deployments.
+      \item Secured internal services with Cloudflare Tunnel (Zero Trust) and cloud storage with signed URLs.
     }%
 }{%
   \job{Forward Deployed Engineer}{Galo AI | Full-time | April 2026 -- July 2026}
-      {Python, SQL, OpenAI/Anthropic APIs, RAG, Prompt Engineering, LLM Ops.}{
-      \item Built and deployed production AI agent workflows with validations, retries, and guardrails.
-      \item Implemented RAG systems and structured outputs with tool calling and dynamic JSON schemas.
+      {Python, Spring Boot, React, PostgreSQL, pgvector, OpenAI/Anthropic APIs, MCP.}{
+      \item Built RAG pipelines with embeddings and pgvector to match unstructured B2B orders against product catalogs.
+      \item Shipped production AI agent workflows with tool calling, structured outputs, retries and guardrails.
       \item Created LLM evaluation and regression pipelines to reduce hallucinations.
     }%
 }
 \jobrow{%
   \job{Software Engineer}{Codify Company | Part-time | September 2025 -- February 2026}
-      {React, Next.js, NestJS, Prisma, PostgreSQL, Docker, Coolify, AWS.}{
-      \item Developed full stack features for a high-concurrency platform with many active users.
-      \item Resolved production incidents and optimized critical endpoints, improving response times.
+      {React, Next.js, NestJS, Prisma, PostgreSQL, Docker, Coolify, Mercado Pago, AWS.}{
+      \item Built full-stack features for a high-concurrency platform; optimized endpoints and resolved production incidents.
+      \item Deployed containerized apps on VPS with Docker and Coolify, backed by CI/CD and automated tests.
+      \item Integrated Mercado Pago payments and executed client data migrations.
     }%
 }{%
   \job{Full-stack Developer}{ITBA Rocketry Team | Contract | August 2025 -- September 2025}
@@ -59,15 +59,17 @@
     }%
 }{%
   \job{AI Software Engineer}{Push\&Pop Growth | Freelance | March 2025 -- August 2025}
-      {Python, FastAPI, Google ADK, PostgreSQL, WhatsApp API, Telegram API, Azure.}{
-      \item Built AI agents with Google ADK, integrated with WhatsApp and Telegram.
-      \item Developed REST services with FastAPI and PostgreSQL, deployed on Azure.
+      {Python, FastAPI, Google ADK, PostgreSQL, Docker, WhatsApp API, Telegram API, Azure.}{
+      \item Designed a multi-agent system where an LLM orchestrator delegates tasks to specialized agents, built and traced with Google ADK.
+      \item Built a FastAPI service for real-time WhatsApp and Telegram webhooks, with history in PostgreSQL.
+      \item Containerized with Docker and deployed on Azure.
     }%
 }
 
 \sectionrule
 \cvsection{Academic\\Projects \&\\Activities}{%
-  \edu{Buenos Aires Institute of Technology (ITBA)}{Computer Engineering | 2022 -- Present}
+  \edu{Buenos Aires Institute of Technology (ITBA)}{Software Engineering | 2022 -- 2027 (expected)}
+  \edu{KTH Royal Institute of Technology, Stockholm}{Exchange semester | August 2026 -- January 2027}
   \edu{Applied Software Development Courses (Udemy)}{NestJS, Next.js, React, Docker | 2025 -- Present}
   \edu{Technical Secondary School No.~7 ``T.R.Q.'' (IMPA)}{Aeronautical Technician | 2015 -- 2021}
   \edu{Digital Business Course (Udemy)}{Sales and Customer Management | Oct 2023 -- Dec 2023}%
@@ -80,12 +82,13 @@
 
 \sectionrule
 \cvsection{Technical\\Skills}{%
-  \textbf{Languages:} TypeScript, Python, JavaScript, Java, C, C\#, HTML, CSS\\
-  \textbf{Frontend \& Mobile:} React, Next.js, iOS Development, React Native\\
-  \textbf{Backend:} Node.js (Express, NestJS), FastAPI, Django, Java Spring Boot\\
-  \textbf{Databases:} PostgreSQL, MySQL, MongoDB, SQLite3, Prisma (ORM)\\
-  \textbf{Cloud, DevOps \& Tools:} AWS, Azure, Docker, Git, GitHub, Maven\\
-  \textbf{Testing \& QA:} Automated Testing (Unit, Integration, E2E), Jest, Cypress\\
+  \textbf{AI / LLM:} RAG, Embeddings \& Vector Search (pgvector), AI Agents, Multi-Agent Systems, Google ADK, MCP, Tool Calling, Prompt Engineering, LLM Evals\\
+  \textbf{Languages:} TypeScript, Python, Java, JavaScript, SQL, C, C\#\\
+  \textbf{Backend:} Node.js (NestJS, Express), FastAPI, Spring Boot, Django, REST APIs, Webhooks\\
+  \textbf{Frontend \& Mobile:} React, Next.js, React Native, iOS Development\\
+  \textbf{Data:} PostgreSQL, MySQL, MongoDB, Prisma (ORM), Kafka, RabbitMQ, Metabase\\
+  \textbf{DevOps \& Cloud:} Docker, Coolify, Linux/VPS, CI/CD, AWS, Azure, Cloudflare (Tunnel, Zero Trust), Prometheus, Loki, Grafana, Git\\
+  \textbf{Testing \& Integrations:} Unit, Integration \& E2E Testing (Jest, Cypress); Mercado Pago, WhatsApp API\\
   \textbf{Hardware:} Arduino, ESP32, Raspberry Pi%
 }
 
