@@ -30,7 +30,7 @@ export const es = {
         type: 'Tiempo completo',
         date: 'abr 2026 — sep 2026',
         bullets: [
-          'Desarrollé pipelines RAG con embeddings y pgvector para matchear pedidos B2B no estructurados contra catálogos: 20k pedidos (más de US$5M) por mes para más de 50 clientes, ahorrando en promedio 10 horas a cada uno.',
+          'Desarrollé pipelines RAG con embeddings y pgvector para matchear pedidos B2B no estructurados contra catálogos: 20k pedidos (más de US$5M) por mes para más de 50 clientes.',
           'Puse en producción workflows de agentes de IA con tool calling, structured outputs y guardrails, con pipelines de evaluación y regresión de LLMs.',
           'Desarrollé features end to end con React, Spring Boot y PostgreSQL.',
           'Lideré la migración de un VPS único a tres servidores con Prometheus, Loki, Metabase, Kafka y RabbitMQ, asegurados con Cloudflare Tunnel (Zero Trust).',
