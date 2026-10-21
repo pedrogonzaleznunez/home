@@ -65,7 +65,7 @@ export const es = {
         ],
       },
       pushpop: {
-        role: 'AI Software Engineer',
+        role: 'AI Engineer',
         type: 'Freelance',
         date: 'mar 2025 — ago 2025',
         bullets: [

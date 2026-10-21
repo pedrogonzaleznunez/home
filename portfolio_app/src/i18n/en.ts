@@ -66,7 +66,7 @@ export const en: Dict = {
         ],
       },
       pushpop: {
-        role: 'AI Software Engineer',
+        role: 'AI Engineer',
         type: 'Freelance',
         date: 'Mar 2025 — Aug 2025',
         bullets: [
